@@ -1,0 +1,43 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper
+{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer
+{
+    height: 50px;
+    background-color: #666;
+    color: #fff;
+}
+
+.content
+{
+    height: 100%;
+    width: 100%;
+}
+
+.columns
+{
+    display: flex;
+    height: 100%;
+}
+
+.main
+{
+    width: 100%;
+    background-color: #ccc;
+}
+
+aside
+{
+    width: 20%;
+    background-color: #999;
+}
