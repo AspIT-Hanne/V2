@@ -11,6 +11,13 @@
 */
 
 /*limited reset*/
+
+html
+{
+	/* scroll-behavior: smooth; */
+}
+
+
 html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
 	margin: 0;
 	padding: 0;
@@ -199,9 +206,16 @@ main table#quickFacts th, main table#quickFacts td {
 	line-height: 3;
 	margin:0;
 }
+
 main table#quickFacts tr:nth-child(odd)  {
 	background: #e1d8b9;
 }
+
+main table#quickFacts tr:hover
+{
+	opacity: 0.5;
+}
+
 main p, main address {
 	color: #666;
 	line-height: 1.6;
@@ -474,4 +488,80 @@ footer#pageFooter p.topLink {
 }
 footer#pageFooter small {
 	font-style: italic;
+}
+
+.images
+{
+	display: grid;
+	width: 600px;
+	grid-template-columns: 1fr;
+}
+
+.images img
+{
+	width: 600px;
+	height: 180px;
+	margin-top: 20px;
+	opacity: 1;
+	transition: width 3s;
+}
+
+.images img:hover
+{
+	/* opacity: 0.2; */
+	width: 0px;
+	height: 180px;
+}
+
+.images2
+{
+	display: grid;
+	width: 600px;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.images2 img
+{
+	width: 180px;
+	height: auto;
+	justify-content: space-between;
+	margin-top: 20px;
+	opacity: 1;
+	transition: opacity 3s;
+}
+
+.images2 img:hover
+{
+	opacity: 0.2;
+}
+
+.images img:nth-of-type(1), .images2 img:nth-of-type(1)
+{
+	transition-timing-function: ease;
+}
+
+.images img:nth-of-type(2), .images2 img:nth-of-type(2)
+{
+	transition-timing-function: linear;
+}
+
+.images img:nth-of-type(3), .images2 img:nth-of-type(3)
+{
+	transition-timing-function: ease-in;
+}
+
+.images img:nth-of-type(4), .images2 img:nth-of-type(4)
+{
+	transition-timing-function: ease-out;
+}
+
+.images img:nth-of-type(5), .images2 img:nth-of-type(5)
+{
+	transition-timing-function: ease-in-out;
+	transition-delay: 2s;
+}
+
+.images img:nth-of-type(6), .images2 img:nth-of-type(6)
+{
+	transition-property: none;
 }
