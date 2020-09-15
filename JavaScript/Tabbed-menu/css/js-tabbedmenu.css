@@ -1,0 +1,48 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+
+nav ul
+{
+    list-style-type: none;
+    background-color: hsl(34, 90%, 60%);
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding-top: 3px;
+}
+
+nav ul li
+{
+    padding: 21px 1.8rem;
+    margin: 0px 3px;
+    background-color: hsl(34, 60%, 45%);
+    color: white;
+    cursor: pointer;
+}
+
+.tabbed-menu_content
+{
+    padding: 2rem;
+    background-color: hsl(34, 72%, 50%);
+    height: 83vh;
+}
+
+.tabbed-menu_content .show
+{
+    display: block;
+}
+
+.tabbed-menu_content div
+{
+    display: none;
+}
+
+.active
+{
+    background-color: hsl(34, 72%, 50%);
+}
+

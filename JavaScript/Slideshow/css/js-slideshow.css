@@ -1,0 +1,102 @@
+/* Generel styling */
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: hsl(0,0%,50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Slideshow */
+
+.slideshow
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+.slideshow img
+{
+    /* transform: translateX(100%);
+    transition: transform 1s;
+    transition-delay: 5ms; */
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+}
+
+.slideshow .currentimg
+{
+    /* transform: translateX(0);
+    transition: transform 1s; */
+    opacity: 1;
+    position: absolute;
+    z-index: 5;
+    opacity: 1;
+}
+
+.slideshow .previousimg
+{
+    /* transform: translateX(-100%); */
+    /* transition: transform 1s; */
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+}
+
+#dots
+{
+    margin-top: 35%;  
+}
+
+.dot
+{
+    background-color:  hsla(0,0%,80%, 0.8);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+}
+
+#dots .active
+{
+    background-color: hsla(0, 0%, 40%, 0.8);
+}
+
+.left, .right
+{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    height: 50px;
+    width: 30px;
+    background-color: red;
+    cursor: pointer;
+}
+
+.left
+{
+    left: 20px;
+}
+
+.right
+{
+    right: 20px;
+}

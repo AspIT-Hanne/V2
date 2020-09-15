@@ -1,0 +1,36 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.gallery
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    justify-items: center;
+    width: 1300px;
+    margin: 2rem auto;
+}
+
+.gallery img:hover
+{
+    cursor: pointer;
+}
+
+.overlay
+{
+    position: fixed;
+    z-index: 9001;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(0,0%,10%,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+

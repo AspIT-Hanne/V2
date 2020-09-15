@@ -1,0 +1,60 @@
+/* Billedgalleri */
+
+.gallery
+{  
+    max-width:1280px;
+    display: flex;
+    margin: auto;
+}
+
+.gallery ul
+{  
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin:0;
+    padding:0;
+}
+
+.gallery li
+{  
+    list-style-type: none;
+    margin: 1rem;
+}
+
+.gallery img
+{  
+    max-width: 320px;
+}
+
+.gallery img:hover 
+{  
+    cursor: pointer;
+}
+
+/* Overlay */
+
+.overlay 
+{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    z-index: 999;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: hsla(0,0%,10%,.9);
+    cursor: pointer;
+    /* padding:1rem; */
+}
+
+
+@media only screen and (min-width: 800px)
+{
+    .gallery
+    {
+        margin-top: 4rem;
+    }
+}

@@ -1,0 +1,117 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+header, footer
+{
+    height: 80px;
+    background-color: hsl(209, 50%, 30%);
+}
+
+header, main, footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main
+{
+    background-color: hsl(209, 50%, 90%);
+    height: 100%;
+}
+
+.menu-btn, nav img
+{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.menuicon, .closeicon
+{
+    z-index: 6;
+}
+
+ul
+{
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsla(209, 50%, 30%, 0.8);
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top: 5rem;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    transition-timing-function: linear;
+}
+
+nav .menu-btn:checked ~ ul
+{
+    transform: translateX(0%);
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: hsl(209, 50%, 95%);
+    text-transform: uppercase;
+}
+
+nav ul li
+{
+    margin: 1rem 0;
+}
+
+nav ul li:hover
+{
+    background-color: hsla(209, 50%, 60%, 0.8);
+    padding: 1rem 0;
+}
+
+.menu-btn
+{
+    z-index: 7;
+    cursor: pointer;
+}
+
+nav .menuicon
+{
+    display: block;
+}
+
+nav .closeicon
+{
+    display: none;
+}
+
+nav .menu-btn:checked ~ .menuicon
+{
+    display: none;
+}
+
+nav .menu-btn:checked ~ .closeicon
+{
+    display: block;
+}
+
+nav .menu-btn
+{
+    opacity: 0;
+}

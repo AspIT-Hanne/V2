@@ -2,7 +2,8 @@ div
 {
     width: 100px;
     height: 100px;
-    animation-name: example1;
+    position: absolute;
+    animation-name: example2;
     animation-duration: 4s;
     animation-iteration-count: 4;
     animation-fill-mode: both;
