@@ -1,0 +1,651 @@
+@keyframes opaquetransition
+{
+    0%      {opacity: 1;}
+    50%     {opacity: 0;}
+    100%    {opacity: 1;}
+}
+
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:hsl(0, 49%, 8%);
+    
+}
+
+a
+{
+    color:hsl(138, 65%, 17%);
+    text-decoration: none;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+nav
+{
+    height: 50px;
+    background-color:hsl(0, 49%, 8%);
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    
+}
+
+header
+{
+    height: 150px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+header .logo
+{
+    height: 150px;
+    width: auto;
+}
+
+#headingplace
+{
+    display: none;
+}
+
+nav img, nav .menuopener
+{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+nav img
+{
+    z-index: 5;
+}
+
+nav .menuopener
+{
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+}
+
+nav .closeicon
+{
+    display: none;
+}
+
+nav ul
+{
+    display: none;
+    list-style-type: none;
+}
+
+nav>ul
+{
+    position: fixed;
+    z-index: 4;
+    top: 150px;
+    height: 100vh;
+    width: 100%;
+    background-color: hsla(0, 49%, 8%, 0.98);
+    padding-top: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    font-size: 2rem;
+    
+}
+
+nav ul li
+{
+    position: relative;
+}
+
+nav ul li ul a
+{
+    font-size: 1.4rem;
+    color:hsla(0, 100%, 100%, 0.7);
+}
+
+nav ul li ul
+{
+    line-height: 2.5rem;
+}
+
+nav ul li img, .submenuopener
+{
+    height: 20px;
+    width: 30px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+nav ul li img
+{
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+}
+
+.submenuopener:checked ~img
+{
+    transform: rotate(0deg);
+}
+
+.submenuopener
+{
+    z-index: 12;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.submenuopener:checked ~ul
+{
+    display: block;
+}
+
+nav .menuopener:checked ~ul
+{
+    display: block;
+}
+
+nav .menuopener:checked ~.closeicon
+{
+    display: block;
+}
+
+nav .menuopener:checked ~.menuicon
+{
+    display: none;
+}
+
+nav ul a
+{
+    text-decoration: none;
+    color: white;
+}
+
+.banner
+{
+    padding-top: 200px;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.banner img
+{
+    grid-area: 1 / 1 / 1 / 1;
+    transition: all 1s;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.banner .active
+{
+    opacity: 1;
+}
+
+.slideshow
+{
+    display: none;
+}
+
+.frontpage article
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "textarea1"
+    "textarea2"
+    "textarea3"
+    "header2"
+    "linkarea1"
+    "linkarea2"
+    "linkarea3"
+    ;
+    width: 100%;
+    
+}
+
+.frontpage h3
+{
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.blogforside a
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.blog, .blogforside
+{
+    margin-top: 200px;
+}
+
+.text, .articles
+{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+main
+{
+    height: 100%;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+h1
+{
+    font-size: 1.8rem;
+    padding: 2rem 0;
+}
+
+h2
+{
+    margin: 2rem 0;
+}
+
+p
+{
+    margin: 0.8rem 0;
+}
+
+a p
+{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.articles h3
+{
+    margin: 2rem 0;
+    font-style: italic;
+    text-align: center;
+}
+
+article ul, article ol
+{
+    list-style-position: outside;
+    padding-left: 1.5rem;
+}
+
+article ol li
+{
+    line-height: 1.5rem;
+}
+
+.webshop
+{
+    margin-bottom: 15rem;
+}
+
+.callicon
+{
+    grid-area: callicon;
+}
+
+.calltext
+{
+    grid-area: calltext;
+}
+
+.mailicon
+{
+    grid-area: mailicon;
+}
+
+.mailtext
+{
+    grid-area: mailtext;
+}
+
+.openicon
+{
+    grid-area: openicon;
+}
+
+.opentext
+{
+    grid-area: opentext;
+}
+
+.instaicon
+{
+    grid-area: instaicon;
+}
+
+.instatext
+{
+    grid-area: instatext;
+}
+
+footer
+{
+    background-color: hsl(0, 49%, 8%);
+}
+
+footer>div
+{
+    padding: 2rem 1rem;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5rem;
+    grid-template-areas: 
+    "callicon calltext mailicon mailtext"
+    "openicon opentext instaicon instatext";
+}
+
+footer div a
+{
+    color: hsl(0, 0%, 100%);
+}
+
+footer div div
+{
+    /* width: 25%; */
+    height: 4rem;
+    margin-bottom: 1rem;
+}
+
+footer div div img
+{
+    max-height: 100%;
+}
+
+@media screen and (min-width: 500px) {
+
+    .menuicon, .menuopener
+    {
+        display: none;
+    }
+
+    nav>ul
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 50px;
+        padding-top: 0;
+    }
+
+    nav>ul>li
+    {
+        padding: 0 1.5rem;
+        display: block;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .submenuopener, nav ul li img
+    {
+        display: none;
+    }
+
+    nav ul li ul
+    {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        z-index: -3;
+        top: 0;
+        left: -0.1rem;
+        padding-top: 50px;
+        width: 17.8rem;
+        background-color: hsl(0, 49%, 8%);
+    }
+
+    nav ul li:hover
+    {
+        background-color: hsla(0, 100%, 100%, 0.2);
+    }
+
+    nav ul li:hover ul
+    {
+        display: flex;
+    }
+
+    #dotarea
+    {
+        position:absolute;
+        bottom: 5%;
+        left: 45%;
+    }
+
+    .dot
+    {
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        border: 2px solid hsl(0, 10%, 78%);
+        display: inline-block;
+        margin: 0 0.5rem;
+        background-color: hsl(0, 10%, 78%);
+        position:relative;
+        z-index: 8;
+    }
+
+    .activedot
+    {
+        background-color: hsl(0, 49%, 8%);
+    }
+
+    
+
+    #headingplace
+    {
+        display: block;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        color: white;
+        font-size: 4rem;
+        font-style: italic;
+        text-shadow: -2px -2px gray;
+        line-height: 5rem;
+    }
+
+    .slideshow
+    {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-between;
+        height: 300px;
+        width: 1300px;
+        margin: 2rem auto 3rem;
+        transition: all 0.5s;
+    }
+
+    .image0
+    {
+        order: 1;
+        animation: opaquetransition 0.5s;
+    }
+
+    .image1
+    {
+        order: 2;
+        animation: opaquetransition 0.5s;
+    }
+
+    .image2
+    {
+        order: 3;
+        animation: opaquetransition 0.5s;
+    }
+
+    .image3
+    {
+        order: 4;
+        animation: opaquetransition 0.5s;
+    }
+    
+    main
+    {
+        margin: 0 auto;
+        width: 1300px;
+        grid-template-columns: 1fr;
+        grid-gap: 3rem;
+    }
+
+    .frontpage h1
+    {
+        grid-area: header;
+    }
+
+    .frontpage .text1
+    {
+        grid-area: textarea1;
+    }
+
+    .frontpage .text2
+    {
+        grid-area: textarea2;
+    }
+
+    .frontpage .text3
+    {
+        grid-area: textarea3;
+    }
+
+    .frontpage h2
+    {
+        grid-area: header2;
+    }
+
+    .frontpage .link1
+    {
+        grid-area: linkarea1;
+    }
+
+    .frontpage .link2
+    {
+        grid-area: linkarea2;
+    }
+
+    .frontpage .link3
+    {
+        grid-area: linkarea3;
+    }
+
+    .frontpage article
+    {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 3rem;
+        grid-template-areas: 
+        "header header header"
+        "textarea1 textarea2 textarea3"
+        "header2 header2 header2"
+        "linkarea1 linkarea2 linkarea3"
+        ;
+        width: 100%;
+    }
+
+    .frontpage a
+    {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+        transition: all 0.5s;
+    }
+
+    .articles .blog
+    {
+        flex-direction: column;
+    }
+
+    .blogforside article
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .blogforside a
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        margin-bottom: 2rem;
+        transition: all 0.5s;
+    }
+
+    .blogforside a:hover, .frontpage a:hover
+    {
+        opacity: 0.8;
+    }
+
+    .blog
+    {
+        margin-top: 250px;
+    }
+
+    .blog img
+    {
+        float: left;
+        margin: 1rem 2rem 1rem 0;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .blog img:hover
+    {
+        opacity: 0.8;
+    }
+
+    .overlay
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 20;
+        background-color: hsla(0, 12%, 8%, 0.98);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .overlay img:hover
+    {
+        opacity: 1;
+    }
+
+    footer>div
+    {
+        width: 1300px;
+        margin: 0 auto;
+        
+        grid-template-columns: 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
+        grid-template-areas: 
+        "callicon calltext mailicon mailtext openicon opentext instaicon instatext";
+    }
+}

@@ -1,0 +1,343 @@
+/* root reset */
+*
+{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+main section
+{
+    margin: 0.5rem;
+}
+
+/* Make sure images are never bigger than width of viewport */
+main section article img
+{
+    width: 100%;
+}
+
+main>div
+{
+    height: 100px;
+    background-color: darkslategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1
+{
+    color: whitesmoke;
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    text-shadow: -2px -2px silver;
+}
+
+p
+{
+    margin: 2rem 0;
+}
+
+nav
+{
+    height: 50px;
+    background-color: hsl(0, 0%, 50%);
+    line-height: 50px;
+}
+
+/* Styling of hamburger icon / close menu icon and checkbox for mobile menu */
+nav .menu-btn, nav>img
+{
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Seperate styling for checkbox */
+nav .menu-btn
+{
+    display: block;
+    width: 40px;
+    z-index: 7;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Seperate styling for hamburger icon / close menu icon */
+nav>img
+{
+    z-index: 6;
+}
+
+/* Styling for menu on mobile - not displayet until checkbox is checked (user clicked the menu icon) */
+nav ul
+{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 60%, 0.95);
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+nav ul li
+{
+    padding: 0.8rem 0;
+}
+
+/* Styling of links in hamburger menu */
+nav ul li a
+{
+    text-decoration: none;
+    color: darkslategray;
+    padding: 1rem;
+}
+
+/* Styling of first level menu items */
+nav ul li h2
+{
+    color: gainsboro;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 2rem;
+    display: inline-block;
+}
+
+/* Styling of second level in menu */
+nav ul li ul
+{
+    background-color: hsla(0, 0%, 80%, 0.5);
+    text-transform: none;
+    font-size: 20px;
+}
+
+/* Styling of links in second level in menu */
+nav ul li ul li a
+{
+    padding-right: 4rem;
+}
+
+/* Styling of hover-effect eventhough hovering isn't possible on phones */
+nav ul li ul li:hover
+{
+    background-color: hsla(0, 0%, 20%, 0.6);
+}
+
+nav ul li ul li:hover a
+{
+    color: gainsboro;
+}
+
+/* If checkbox is checked display hamburger menu as flexbox */
+nav .menu-btn:checked ~ul
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;   
+}
+
+/* Styling of list items in menu */
+nav .menu-btn:checked ~ul li
+{
+    text-align: right;
+    width: 100%;
+    position: relative; /* This is necessary to be able to use position absolute on caret images */
+}
+
+/* Styling of images in hamburger menu (caret down icons) */
+nav .menu-btn:checked ~ul li img
+{
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+    display: inline-block;
+    width: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/* Styling of checkbox next to menu items - submenu caret checkbox */
+nav .menu-btn:checked ~ul li .submenu-btn
+{
+    display: block;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    position: absolute; /* right and top will be relative to the li-item because it is the nearest above item that has a position defined. If no item had position defined this position: absolute would relate to the browser window, which is the nearest above element with a default position defined */
+    right: 5px;
+    top: 10px;
+    margin-top: 5px;
+    z-index: 7;
+    opacity: 0;
+}
+
+nav .menu-btn:checked ~ul li .submenu-btn:checked ~img
+{
+    transform: rotate(0deg);
+}
+
+/* Styling of submenus when opened (submenu caret checkbox checked) */
+nav .menu-btn:checked ~ul li .submenu-btn:checked ~ul
+{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+}
+
+/* If menu checkbox is checked don't display menu icon. If menu checkbox is not checked don't display menu close icon */
+nav .menu-btn:checked ~ .menuicon, nav .menu-btn ~ .closeicon
+{
+    display: none;
+}
+
+/* If menu checkbox is not checked display menu icon. If menu checkbox is checked display menu close icon */
+nav .menu-btn ~ .menuicon, nav .menu-btn:checked ~ .closeicon
+{
+    display: block;
+}
+
+
+@media only screen and (min-width: 768px)
+{
+    /* h1 animation - called in line 227 */
+    @keyframes header {
+        0% {transform: translateX(100%) rotateY(0deg);}
+        25% {transform: translateX(75%) rotateY(90deg);}
+        50% {transform: translateX(50%) rotateY(180deg);}
+        75% {transform: translateX(25%) rotateY(270deg);}
+        100% {transform: translateX(0%) rotateY(360deg);}
+    }
+
+    h1
+    {
+        font-size: 4rem;
+        letter-spacing: 1rem;
+        animation: header 2s linear 0s 1 forwards;
+    }
+
+    /* Styling of to-top arrow */
+    main>span
+    {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: hsla(0, 0%, 100%, 0.5);
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.5s;
+        
+    }
+
+    main>span img
+    {
+        width: 30px;
+        transform: rotate(180deg);
+    }
+
+    main>span:hover
+    {
+        transform: scale(120%);
+    }
+
+    nav
+    {
+        height: 50px;
+        background-color: hsl(0, 0%, 50%);
+        line-height: 50px;
+    }
+
+    /* Do not display menu icons and checkboxes on desktop */
+    nav img, nav .menu-btn, nav .submenu-btn, nav .menu-btn ~ .menuicon
+    {
+        display: none;
+    }
+
+    /* Display menu as horisontal flexbox */
+    nav ul
+    {
+        display: flex;
+        justify-content: space-evenly;
+        height: 50px;
+        position: relative;
+        z-index: 10;
+    }
+
+    nav ul li
+    {
+        padding: 0;
+        position: relative;
+        z-index: 9;
+        background-color: hsl(0, 0%, 60%);
+    }
+        
+    nav ul li:hover
+    {
+        background-color: hsl(0, 0%, 20%);
+    }
+
+    nav ul li:hover h2
+    {
+        background-color: hsla(0, 0%, 20%);
+    }
+
+    nav ul li h2
+    {
+        color: gainsboro;
+        display: block;
+        position: relative;
+        z-index: 8;
+        background-color: hsl(0, 0%, 60%);
+    }
+
+    /* Styling of dropdown menus. Dropdown menus are by default moved out of the page with transform: translateY */
+    nav ul li ul
+    {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        background-color: hsl(0, 0%, 80%);
+        text-transform: none;
+        width: 235px;
+        font-size: 20px;
+        text-align: left;
+        height: auto;
+        transform: translateY(-100%);
+        transition: transform 0.3s;
+    }
+
+    nav ul li ul li
+    {
+        display: block;
+        padding: 0 1rem;
+        z-index: 1;
+    }
+
+    nav ul li ul li a
+    {
+        padding-right: 0;
+    }
+
+    /* Translate dropdown menus down to be seen when user hovers topmenu item */
+    nav ul li:hover ul
+    {
+        transform: translateY(0%);
+    }
+}
+

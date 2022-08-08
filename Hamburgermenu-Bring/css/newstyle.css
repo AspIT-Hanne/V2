@@ -1,0 +1,378 @@
+/* Importer google font */
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700&display=swap');
+
+/* Nulstilling af alle margener og padding */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile-first styling */
+
+body
+{
+    font-family: 'Mukta', sans-serif;
+    line-height: 1.8;
+}
+
+header
+{
+    display: flex;
+    height: 3rem;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* For at få forstørrelsesglas ikonet til at se ud som om, det er inden i søgefeltet, styler jeg hele formularen, så den ligner et søgefelt ved at give den en ramme med lidt afrundede hjørner. Inden i formularen ligger så selve søgefeltet, som jeg har fjernet rammen på. */
+
+form
+{
+    width: 50%;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+img
+{
+    max-height: 100%;
+}
+
+input
+{
+    border: none; /* Ingen ramme om selve søgefeltet */
+    background-color: hsla(0,0,0,0);
+    padding: 0 5px;
+}
+
+input[type="search"]:hover
+{
+    background-color: hsla(0, 0%, 81%, 0.2);
+}
+
+/* Styling af hamburger menu */
+
+nav img, .menuopener
+{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 40px;
+}
+
+nav img.closeicon
+{
+    display: none;
+}
+
+nav ul
+{
+    display: none;
+    list-style-type: none;
+    padding-top: 1rem;
+}
+
+.menuopener
+{
+    width: 40px;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.menuopener:checked ~ul
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    z-index: 10;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(0, 0%, 100%, 0.95);
+}
+
+nav ul a
+{
+    color: hsl(0, 0%, 20%);
+    text-decoration: none;
+    font-size: 2rem;
+    display: block;
+}
+
+nav ul li
+{
+    padding: 0 1rem;
+    width: 100%;
+    text-align: right; 
+}
+
+nav ul li:hover
+{
+    background-color: hsla(94, 50%, 51%, 0.5); 
+}
+
+/* Styling af indhold */
+
+section
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+section:nth-of-type(3n+1)
+{
+    background-color: hsl(94, 50%, 51%); /* Hver tredje section er grøn */
+}
+
+section:nth-of-type(3n+3)
+{
+    background-color: hsl(49, 84%, 57%); /* Hver tredje section er gul */
+}
+    
+/* Speciel styling første og sidste section-tag med billeder med tekst på */
+section:first-of-type article, section:last-of-type article
+{
+    margin: 0;
+    display: flex; /* For nemt at kunne centrere teksten ovenpå billedet */
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    z-index: 5;
+    color: white;   
+}
+
+section:first-of-type h1, section:last-of-type h1
+{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+section:first-of-type p, section:last-of-type p
+{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Styling af de enkelte articles og deres indhold */
+
+article
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+article.services
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    margin-bottom: 4rem;
+}
+
+article .service-item /* Hvert punkt laves som flexbox for at kunne centrere tekst og billede */
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article .service-item h3
+{
+    margin: 0;
+    font-size: 1.6rem;
+}
+    
+/* Sections som er opdelt i kolonner - "Om Bring" og "Kundeservice" - i mobiludgaven selvfølgelig under hinanden */
+section .columns
+{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+section .columns p
+p
+{
+    margin-bottom: 1.5rem;
+}
+
+section .columns ul
+{
+    list-style-position: inside;
+}
+
+h2
+{
+    padding: 1em 0;
+    font-size: 3em;
+}
+
+h3
+{
+    font-size: 2em;
+    font-weight: normal;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Styling af "buttons" - a-tags som skal ligne knapper */
+.readmore, .seekjob
+{
+    
+    text-decoration: none;
+    padding: 0.3rem 2rem;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    
+}
+
+.readmore
+{
+    background-color: hsl(0, 0%, 20%);
+    color: white;    
+}
+
+.readmore:hover
+{
+    background-color: lightgray;
+}
+
+.seekjob
+{
+    background-color: hsl(49, 84%, 57%);
+    color: hsl(0, 0%, 20%);
+}
+
+.seekjob:hover
+{
+    background-color: lightyellow;
+}
+
+footer
+{
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-left: 4rem;
+}
+
+footer article
+{
+    align-items: flex-start;
+    padding-bottom: 2rem;
+}
+
+footer ul
+{
+    list-style-type: none;
+}
+
+footer h3
+{
+    color: hsl(94, 50%, 51%);
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+
+
+
+/* Desktop styling */
+
+@media only screen and (min-width: 720px)
+{
+    section:first-of-type h1, section:last-of-type h1
+    {
+        font-size: 5rem;
+    }
+    
+    section:first-of-type p, section:last-of-type p
+    {
+        font-size: 2rem;
+    }
+
+
+    article
+    {
+        width: 1024px;
+        margin: 2em auto;
+    }
+
+    article.services
+    {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    section .columns
+    {
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+    .column
+    {
+        /* Til sectioner som er delt op i to kolonner */
+        width: 45%;
+    }
+
+    /* For h2 where an image needs to place next to the heading (eg in the section "Kundeservice") */
+    h2.absolute
+    {
+        position: absolute;
+        
+    }
+
+    /* Hvis h2'en har klassen ".absolute" skal tekst og øvrigt indhold under centreres lodret, så det ikke falder sammen med h2'eren. I andre tilfælde hvor der er kolonner (fx "Om Bring"), skal teksten justeres til toppen og ikke centreres lodret. På denne måde rammer jeg klassen ".columns" kun når den er søskende til en h2 i klassen ".absolute" */
+    h2.absolute ~.columns
+    {
+        align-items: center;
+    }
+
+    footer
+    {
+        padding-left: 0;
+    }
+
+    footer .columns
+    {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin-bottom: 0;
+    }
+    
+    /* Footer kolonner skal være smallere end de andre kolonner, da der er tre af dem */
+    footer .column
+    {
+        width: 30%;
+    }
+
+    footer h2
+    {
+        text-align: center;
+    }
+}

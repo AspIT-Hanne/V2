@@ -1,0 +1,140 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: hsl(209, 30%, 80%);
+    color: hsl(209, 50%, 20%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto auto auto auto 100px;
+    grid-template-areas:
+    "header"
+    "column1"
+    "column2"
+    "column3"
+    "column4"
+    "footer"
+    
+}
+
+header, footer
+{
+    background-color: hsl(209, 50%, 20%);
+    color: hsl(209, 30%, 80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header
+{
+    grid-area: header;
+    margin-bottom: 1rem;
+}
+
+article
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+article div
+{
+    position: relative;
+    text-align: center; 
+}
+
+article div h3
+{
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    background-color: hsla(0, 0%, 100%, 0.7);
+    padding: 0.5rem 0;
+    border-top: 1px solid hsl(209, 30%, 80%);
+    border-bottom: 1px solid hsl(209, 30%, 80%);
+}
+
+article:first-of-type
+{
+    grid-area: column1;
+}
+
+article:nth-of-type(2)
+{
+    grid-area: column2;
+}
+
+article:nth-of-type(3)
+{
+    grid-area: column3;
+}
+
+article:last-of-type
+{
+    grid-area: column4;
+}
+
+footer
+{
+    grid-area: footer;
+}
+
+@media only screen and (min-width: 1000px)
+{
+    body
+    {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100px auto auto 100px;
+        grid-template-areas: 
+        "header header"
+        "column1 column2"
+        "column3 column4"
+        "footer footer";
+    }
+}
+
+@media only screen and (min-width: 1500px)
+{
+    body
+    {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 100px auto 100px;
+        grid-template-areas: 
+        "header header header header"
+        "column1 column2 column3 column4"
+        "footer footer footer footer";
+    }
+
+    article img
+    {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
+    }
+
+    article img:hover
+    {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 65% 85%, 50% 100%, 35% 85%, 0 85%);
+        opacity: 0.7;
+    }
+
+    article img:hover ~h3
+    {
+        opacity: 0.7;
+    }
+    
+    article div h3
+    {
+        position: relative;
+        padding: 0;
+        background-color: hsla(0, 0%, 100%, 0);
+    }
+}

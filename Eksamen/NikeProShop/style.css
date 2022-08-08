@@ -1,0 +1,388 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+p
+{
+    line-height: 1.4rem;
+}
+
+article>div>ul
+{
+    margin: 0.5rem 0;
+    list-style-position: inside;
+}
+
+article>div>ul>li
+{
+    margin: 0.5rem 0;
+}
+
+h1
+{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+h2
+{
+    font-size: 1.3rem;
+}
+
+/* Navigation */
+
+nav
+{
+    height: 50px;
+    background-color: orange;
+}
+
+.navlogo
+{
+    height: 40px;
+    position:absolute;
+    top: 5px;
+    left: 10px;
+    z-index: 10;
+}
+
+/* Make checkbox and the two icon images (hamburger and close icon) same size and positioned in the same place */
+nav .menu-btn, nav>img
+{
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Give checkbox the right width and highest z-index so it is always positioned in front of all other elements. If the user clicks in that area he will always hit the checkbox */
+nav input.menu-btn
+{
+    display: block;
+    width: 40px;
+    z-index: 7;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Give the icons the second highest z-index so they are positioned right behind the checkbox but in front of all other elements (eg the ul/hamburger menu) */
+nav>img
+{
+    z-index: 6;
+}
+
+/* Styling of hamburger menu. Full width and height. Third highest z-index so it's placed behind the icons and the checkbox but in front of the rest of the site elements. Slightly see-through to make it clearly an overlay. After styling make it not be displayed. */
+nav ul
+{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: orange;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    list-style-type: none;
+    text-transform: uppercase;
+
+    padding-top: 3rem;
+}
+
+nav ul li
+{
+    padding: 0.8rem 0;
+    text-align: center;
+    display: block;
+    transition: all 0.5s;
+}
+
+nav ul li:hover
+{
+    background-color: hsla(16, 100%, 50%, 0.5);
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 0 2rem;
+    font-size: 20px;
+    display: block;
+}
+
+/* When checkbox is checked (user clicked) display the ul that is sibling to the checkbox (on the same level as the checkbox element). It is displayed as a column flexbox - it could also have been display as block */
+nav .menu-btn:checked ~ul
+{
+    display: flex;
+    flex-direction: column;
+}
+
+nav .menu-btn:checked ~ul li
+{
+    width: 100%;
+}
+
+/* When the checkbox is checked (menu is open), the hamburger icon is not displayed */
+nav .menu-btn:checked ~ .menuicon
+{
+    display: none;
+}
+
+/* When the checkbox is not checked (menu is closed), the hamburger icon is displayed */
+nav .menu-btn ~ .menuicon
+{
+    display: block;
+}
+
+/* When the checkbox is checked (menu is open), the close icon is displayed */
+nav .menu-btn:checked ~ .closeicon
+{
+    display: block;
+}
+
+/* When the checkbox is not checked (menu is closed), the close icon is not displayed */
+nav .menu-btn ~ .closeicon
+{
+    display: none;
+}
+
+/* Slideshow */
+
+.slideshow
+{
+    position: relative;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+.slideshow img:nth-of-type(n+2)
+{
+    display: none;
+}
+
+.slideshow .show
+{
+    opacity: 1;
+}
+
+.dotarea
+{
+    position:absolute;
+    bottom: 5%;
+    right: 50%;
+}
+
+.dot
+{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0.2rem;
+    background-color: orange;
+    position:relative;
+    z-index: 8;
+}
+
+.active
+{
+    background-color: orangered;
+}
+
+/* Gallery */
+
+article
+{
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: (1fr);
+    grid-gap: 2rem;
+}
+
+.gallery
+{
+    justify-items: center;
+}
+
+.gallery h3
+{
+    font-weight: 400;
+    text-align: center;
+}
+
+.gallery img
+{
+    transition: all 0.5s;
+}
+
+.overlay
+{
+    position: fixed;
+    z-index: 9001; /* It's over ninethousaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaand!!! */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(0,0%,10%,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.floattext p
+{
+    padding: 1rem 0;
+}
+
+/* Footer */
+
+footer
+{
+    background-color: orange;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+footer>div
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0.4rem;
+}
+
+footer div div div
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0.8rem 0;
+}
+
+footer a
+{
+    color: white;
+}
+
+footer h2, footer h4
+{
+    margin: 0.5rem 0;
+}
+
+@media only screen AND (min-width: 600px) {
+    nav
+    {
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        background-color: orange;
+        /* line-height: 50px; */
+    }
+
+    /* Hamburger menu icon is not displayed on desktop version. You have to up the specificity because it is this specific on mobile version in line 119 - 122. If you just write nav > img the specificity isn't high enough and it would still be displayed as stated in line 121 */
+    nav .menu-btn ~ .menuicon
+    {
+        display: none;
+    }
+
+    /* Checkbox is not displayed (or even present) on desktop version */
+    nav input.menu-btn
+    {
+        display: none;
+    }
+
+    /* Menu is displayed as a horisontal (row) flexbox on desktop version */
+    nav ul
+    {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 50px;
+        position: relative;
+        width: 50%;
+        z-index: 10;
+        padding: 0;
+    }
+    
+    .slideshow
+    {
+        height: 640px;
+    }
+
+    .slideshow img
+    {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .slideshow img:nth-of-type(n)
+    {
+        display: block;
+    }
+
+    article
+    {
+        width: 1300px;
+        margin: 2rem auto;
+        
+    }
+    
+    .gallery
+    {   
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery img:hover
+    {
+        cursor: pointer;
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+
+    .left
+    {
+        float: left;
+    }
+
+    .right
+    {
+        float: right;
+    }
+
+    .floattext img
+    {
+        margin-right: 0.3rem;
+        width: 50%;
+    }
+
+    .floattext p
+    {
+        margin-bottom: 1rem;
+    }
+
+    footer>div
+    {
+        width: 1300px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    footer div div div:last-of-type
+    {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}

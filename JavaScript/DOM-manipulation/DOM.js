@@ -1,41 +1,82 @@
-var images = document.querySelectorAll('img');
+// Hent elementet med id "menu" og udskriv den i konsollen
 
-var src1 = images[0].src;
-var src2 = images[1].src;
+let menu = document.querySelector("#menu");
 
-console.log(images);
+console.dir(menu);
 
-images.forEach(element => 
-{
-    element.setAttribute("alt", "Billedet er underlagt copyright");
-    console.log(element.src);
-});
+// Hent og udskriv alle billeder
 
+let images = document.querySelectorAll('img');
 
-var headlines = document.querySelectorAll('h1');
+images.forEach(element => console.log(element));
+
+// Hent og udskriv elementet med klassen "active"
+
+let active = document.querySelector('.active');
+console.log(active);
+
+// Hent og udskriv alle H1-elementer
+
+let headlines = document.querySelectorAll('h1');
+
+headlines.forEach(element => console.log(element));
+
+// Hent og udskriv alle p-elementer
+
+let afsnit = document.querySelectorAll('p');
+
+afsnit.forEach(element => console.log(element));
+
+// Tilføj ny alt-tekst til alle billeder
+
+images.forEach(element => element.setAttribute("alt", "Billedet er underlagt copyright"));
+
+// Udskift teksten i den primære overskrift
+
+let overskrift = document.querySelector('h1');
+
+overskrift.innerHTML = "Overskriften er udskiftet";
+
+// Tilføj klassen "title" til alle H1-elementer
 
 headlines.forEach(element =>
 {
     element.classList.add('title');
 });
 
-var playground = document.querySelector('#playground');
+// Find og udskriv alle li-elementer
 
-// console.log(playground);
+let listItems = document.querySelectorAll('li');
 
-var myUl = document.createElement('ul');
-var myLi1 = document.createElement('li');
-var myLi2 = document.createElement('li');
-var myLi3 = document.createElement('li');
-myUl.appendChild(myLi1);
-myUl.appendChild(myLi2);
-myUl.appendChild(myLi3);
-playground.appendChild(myUl);
+listItems.forEach(x => console.log(x));
 
-var myLiText1 = document.createTextNode("Element 1");
-var myLiText2 = document.createTextNode("Element 2");
-var myLiText3 = document.createTextNode("Element 3");
+// Find elementet med id#playground og tilføj en ul med tre li herunder
 
-myLi1.appendChild(myLiText1);
-myLi2.appendChild(myLiText2);
-myLi3.appendChild(myLiText3);
+let playground = document.querySelector('#playground');
+let newUl = document.createElement('ul');
+
+for(let i = 0; i < 3; i++)
+{
+    let newLi = document.createElement('li');
+    let newLiTxt = document.createTextNode("Element " + (i + 1));
+    newLi.appendChild(newLiTxt);
+    newUl.appendChild(newLi);
+}
+
+playground.appendChild(newUl);
+
+// Find de to billeder og få dem til at bytte plads
+
+let src1 = images[0].src;
+let src2 = images[1].src;
+
+images[0].src = src2;
+images[1].src = src1;
+
+// Slet elementerne med id#deleteme og #deletemetoo
+
+let sletMig = document.querySelector("#deleteme");
+sletMig.remove();
+
+let sletOgsaaMig = document.querySelector("#deletemetoo");
+sletOgsaaMig.parentNode.removeChild(sletOgsaaMig);

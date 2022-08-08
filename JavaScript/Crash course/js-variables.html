@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let greeting = 'Hej Verden';
+        let firstname = 'John';
+        let middlename = "F.";
+        let lastname = 'Kennedy';
+        let fullname = firstname + ' ' + middlename + ' ' + lastname;
+        let salary = 5000;
+        let calc = 5 + 5;
+        let result = calc * 3;
+        let num1 = 42, num2 = 10;
+        let sum1 = num1 + num2;
+        let deci1 = 2.25, deci2 = 3.50;
+        let sum2 = Math.ceil(deci1+deci2);
+        let deci3 = 2.55, deci4 = 1.44;
+        let sum3 = Math.floor(deci3+deci4);
+        let sqroot = Math.sqrt(65);
+        let streng = "John Doe is 25 years old"
+        let nystreng = streng.slice(5, 8);
+        
+        let compare = false;
+        console.log("Greeting: " + greeting + "\nFullname: " + fullname + "\nResult: " + result + "\nSum1: " + sum1 + "\nSum2: " + sum2 + "\nSum3: " + sum3 + "\nSqroot: " + sqroot + "\nNystreng: " + nystreng + "\nCompare: " + compare + "\nType of fullname, salary, deci3 and compare: " + typeof(fullname) + " " + typeof(salary) + " " + typeof(deci3) + " " + typeof(compare));
+
+        let type1 = "10";
+        let type2 = "2";
+        let type3 = 20;
+        let type4 = 10;
+
+        console.log("type1 = " + type1 + " (string) type2 = " + type2 + " (string) type3 = " + type3 + " (number) type4 = " + type4 + " (number)");
+        console.log("type1 + type2");
+        console.log(type1 + type2);
+        console.log("type1 + type3");
+        console.log(type1 + type3);
+        console.log("type4 + type2");
+        console.log(type4 + type2);
+        console.log("type3 + type4");
+        console.log(type3 + type4);
+        console.log("Resultatet af type3 + type4 er : " + type3 + type4);
+        console.log("type3 + type4 + type2");
+        console.log(type3 + type4 + type2);
+        console.log("type4 / type2");
+        console.log(type4 / type2);
+        console.log("type2 * type3 + type1");
+        console.log(type2 * type3 + type1);
+        console.log("type1 + type2 som tal");
+        console.log(Number(type1) + Number(type2));
+        console.log("type3 + type4 som streng");
+        console.log(type3.toString() + String(type4)); // Begge metoder kan bruges og kun en af dem er nødvendig
+    </script>
+</body>
+</html>

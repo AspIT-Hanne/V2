@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays</title>
+</head>
+<body>
+    <script>
+        let user = {fornavn: "Hanne", efternavn: "Lund", by: "Vojens", alder: 48};
+        console.log(user);
+        
+        // Opgave 3
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits);
+
+        for(let i = 0; i < fruits.length; i++)
+        {
+            console.log(fruits[i]);
+        }
+
+        // Opgave 3.a
+        
+        fruits.push("Kiwi");
+
+        fruits.forEach(printfruit); // Callback function
+
+        function printfruit(e)
+        {
+            console.log(e);
+        }
+
+        // Opgave 3.b
+
+        fruits.unshift("Strawberry");
+
+        fruits.forEach(fruit => console.log(fruit)); // Arrow function / anonymous function
+
+        // Opgave 3.c
+        let removed = fruits.pop();
+
+        console.log("The removed element is: " + removed);
+
+        fruits.forEach(function(fruit) {console.log(fruit)}); // Inline function
+
+        // Opgave 3.d
+
+        removeFruit("Apple");
+        fruits.forEach(fruit => console.log(fruit));
+
+        function removeFruit(fruit)
+        {
+            let fruitIndex = fruits.indexOf(fruit);
+            fruits.splice(fruitIndex, 1);
+        }
+
+        let input = prompt("Indtast din alder");
+        while(isNaN(input))
+        {
+            input = prompt("Indtast venligst et tal");
+        }
+    </script>
+</body>
+</html>

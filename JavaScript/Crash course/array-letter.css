@@ -1,0 +1,39 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    margin: 4rem;
+    font-size: 1.2rem;
+}
+
+.firmalogo
+{
+    float: right;
+    margin-left: 2rem;
+    height: 110px;
+}
+
+.afsender
+{
+    text-align: right;
+}
+
+.modtager
+{
+    margin-top: 5rem;
+}
+
+.dato
+{
+    text-align: right;
+    margin: 3rem 0;
+}
+
+.afsnit
+{
+    margin-bottom: 2rem;
+}

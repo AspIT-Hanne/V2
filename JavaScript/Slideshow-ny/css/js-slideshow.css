@@ -10,27 +10,35 @@ body
     overflow-x: hidden;
 }
 
+article
+{
+    position: relative;
+    height: auto;
+}
+
 .slideshow img
 {
-    transform: translateX(100%);
+    /* transform: translateX(100%);
     transition: transform 2s;
+    z-index: 2; */
     position: absolute;
-    z-index: 2;
+    opacity: 0;
+    transition: opacity 2s;
 }
 
 .slideshow .currentImg
 {
-    transform: translateX(0%);
+    opacity: 1;
     position: absolute;
     z-index: 5;
 }
 
-.slideshow .previousImg
+/* .slideshow .previousImg
 {
     transform: translateX(-100%);
     position: absolute;
     z-index: 3;
-}
+} */
 
 .dot
 {
@@ -47,4 +55,11 @@ body
 .dotArea .active
 {
     background-color: hsla(0, 0%, 40%, 0.8);
+}
+
+.dotArea
+{
+    position: absolute;
+    left: 50%;
+    top: 740px;
 }

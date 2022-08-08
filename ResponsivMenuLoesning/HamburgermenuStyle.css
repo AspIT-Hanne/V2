@@ -1,0 +1,178 @@
+/* General styling of website */
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+main
+{
+    height: 100%;
+    margin: 0.5rem;
+    position: relative;
+    z-index: -1;
+}
+
+main section article img
+{
+    width: 100%;
+}
+
+h1, p
+{
+    margin: 2rem 0;
+}
+
+/* Menu styling */
+
+nav
+{
+    height: 50px;
+    background-color: hsl(0, 0%, 50%);
+}
+
+/* Make checkbox and the two icon images (hamburger and close icon) same size and positioned in the same place */
+nav .menu-btn, nav>img
+{
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Give checkbox the right width and highest z-index so it is always positioned in front of all other elements. If the user clicks in that area he will always hit the checkbox */
+nav input.menu-btn
+{
+    display: block;
+    width: 40px;
+    z-index: 7;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Give the icons the second highest z-index so they are positioned right behind the checkbox but in front of all other elements (eg the ul/hamburger menu) */
+nav>img
+{
+    z-index: 6;
+}
+
+/* Styling of hamburger menu. Full width and height. Third highest z-index so it's placed behind the icons and the checkbox but in front of the rest of the site elements. Slightly see-through to make it clearly an overlay. After styling make it not be displayed. */
+nav ul
+{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(0, 0%, 60%, 0.95);
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding-top: 3rem;
+}
+
+nav ul li
+{
+    padding: 0.8rem 0;
+    text-align: center;
+}
+
+nav ul li:hover
+{
+    background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: darkslategray;
+    padding: 1rem;
+}
+
+/* When checkbox is checked (user clicked) display the ul that is sibling to the checkbox (on the same level as the checkbox element). It is displayed as a column flexbox - it could also have been display as block */
+nav .menu-btn:checked ~ul
+{
+    display: flex;
+    flex-direction: column;
+}
+
+nav .menu-btn:checked ~ul li
+{
+    width: 100%;
+}
+
+/* When the checkbox is checked (menu is open), the hamburger icon is not displayed */
+nav .menu-btn:checked ~ .menuicon
+{
+    display: none;
+}
+
+/* When the checkbox is not checked (menu is closed), the hamburger icon is displayed */
+nav .menu-btn ~ .menuicon
+{
+    display: block;
+}
+
+/* When the checkbox is checked (menu is open), the close icon is displayed */
+nav .menu-btn:checked ~ .closeicon
+{
+    display: block;
+}
+
+/* When the checkbox is not checked (menu is closed), the close icon is not displayed */
+nav .menu-btn ~ .closeicon
+{
+    display: none;
+}
+
+
+
+@media only screen and (min-width: 768px)
+{
+    nav
+    {
+        height: 50px;
+        background-color: hsl(0, 0%, 50%);
+        line-height: 50px;
+    }
+
+    /* Hamburger menu icon is not displayed on desktop version. You have to up the specificity because it is this specific on mobile version in line 119 - 122. If you just write nav > img the specificity isn't high enough and it would still be displayed as stated in line 121 */
+    nav .menu-btn ~ .menuicon
+    {
+        display: none;
+    }
+
+    /* Checkbox is not displayed (or even present) on desktop version */
+    nav input.menu-btn
+    {
+        display: none;
+    }
+
+    /* Menu is displayed as a horisontal (row) flexbox on desktop version */
+    nav ul
+    {
+        display: flex;
+        justify-content: space-evenly;
+        height: auto;
+        padding: 0;
+    }
+
+    nav ul li
+    {
+        padding: 0;
+    }
+
+    nav ul li a
+    {
+        color: gainsboro;
+    }
+}
+

@@ -1,0 +1,47 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow
+{
+    position: relative;
+    height: 776px;
+}
+
+.slideshow img
+{
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.slideshow .show
+{
+    opacity: 1;
+}
+
+.dotarea
+{
+    position:absolute;
+    bottom: 5%;
+    right: 50%;
+}
+
+.dot
+{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: greenyellow;
+    position:relative;
+    z-index: 8;
+}
+
+.active
+{
+    background-color: green;
+}

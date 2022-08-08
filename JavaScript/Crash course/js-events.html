@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Events</title>
+    <link href="js-events.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- Opgave 1: Udskriv Hello World i konsollen, når der klikkes på en knap -->
+
+    <form id="HlWorld">
+        <input type="button" name="HelloWorld" value="Tryk for at sige hej">
+    </form>
+
+    <!-- Opgave 2: Når der klikkes på et list-item skal et popup vise indholdet af det item, der er klikket på -->
+
+    <ul id="menu">
+        <li>Punkt 1</li>
+        <li>Punkt 2</li>
+        <li>Punkt 3</li>
+    </ul>
+
+    <!-- Opgave 3: Skift baggrundsfarve på div, når der klikkes på en knap -->
+
+    <div id="square" class="blue"></div>
+    <input type="button" name="colorChange" value="Skift farve" id="clrbtn">
+
+    <!-- Opgave 4: Skift baggrundsfarve på body ved klik på en knap -->
+
+    <p>
+        <input type="button" name="changeToGreen" value="Skift til grøn" id="greenbtn">
+        <input type="button" name="changeToRed" value="Skift til rød" id="redbtn">
+        <input type="button" name="changeToYellow" value="Skift til gul" id="yellowbtn">
+        <input type="button" name="changeToBlue" value="Skift til blå" id="bluebtn">
+    </p>
+
+   <!-- Opgave 5: Vis/skjul element med inline styles -->
+
+    <p>
+        <input type="button" name="showOrHide" value="Vis/skjul-inline" id="showhideinline">
+        <div id="rectinline" style="display: none;"></div>
+    </p>
+
+    <!-- Opgave 6: Vis/skjul element med klasser (eksterne styles) -->
+
+    <p>
+        <input type="button" name="showOrHide" value="Vis/skjul-eksternt" id="showhidebtn">
+        <div id="rect" class="hide"></div>
+    </p>
+    
+
+    <script src="js-events.js"></script>
+</body>
+</html>

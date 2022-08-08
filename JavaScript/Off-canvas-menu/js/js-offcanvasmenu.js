@@ -1,4 +1,34 @@
 var button = document.querySelector('#menu-icon');
+var testbutton = document.querySelector('#testknap');
+
+testbutton.addEventListener('click', function(e)
+    {
+        console.log(e);
+    }
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Hamburger menu JavaScript
 

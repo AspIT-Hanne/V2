@@ -1,0 +1,51 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+main
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+p
+{
+    margin-bottom: 1rem;
+}
+
+article
+{
+    margin: 1rem;
+
+}
+
+body
+{
+    line-height: 1.5;
+}
+
+img
+{
+    width: 500px;
+    margin-right: 1rem;
+    float: left;
+}
+
+h1
+{
+    font-size: 2rem;
+}
+
+h1, h2
+{
+    margin: 1rem 0;
+}
+
+nav
+{
+    background-color: darkslategray;
+    height: 50px;
+    line-height: 50px;
+}

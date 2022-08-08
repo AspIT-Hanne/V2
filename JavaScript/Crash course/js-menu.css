@@ -1,0 +1,40 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+nav
+{
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+
+}
+
+nav ul li
+{
+    display: flex;
+    justify-content: center;
+    padding: 1.3rem 2rem;
+    min-width: 5rem;
+    border-left: 1px solid white;
+}
+
+nav ul li:last-child
+{
+    border-right: 1px solid white;
+}
+
+nav ul li a
+{
+    color: white;
+    text-decoration: none;
+}

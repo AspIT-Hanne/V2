@@ -1,0 +1,120 @@
+/* CSS reset of all margin/padding (* star means all selectors) */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+/* Main styling */
+
+body
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100vh; /* Make sure the site fills the whole browser window in height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styling */
+
+header
+{
+    height: 100px;
+    background-color: #565462;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100px;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between; 
+    /* After removing the position: absolute from the two pictures, space-between ensures that they are justified all the way to the right and left in the header */
+}
+
+header h1
+{
+    color: #bae4e2;
+}
+
+
+/* Nav styling */
+
+nav, footer
+{
+    background-color: #006699;
+    height: 40px;
+    color: white;
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    /* In the navbar this flexbox is necessary to align the ul with the menu to the left and the two flag images to the right */
+}
+
+nav ul
+{
+    list-style-type: none;
+    padding-left: 20px;
+    display: flex;
+    /* Flex container to hold the menu items */
+}
+
+nav ul li
+{
+    padding-left: 10px;
+}
+
+nav ul li a
+{
+    border-right: 2px solid black; /* Little black border between the links */
+    color: inherit; /* I could also have written color: white but with inherit I make sure the menu items inherit from the color set in the nav, footer declarations on line 46 so the color of the menu-links and in the footer are always the same */
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+nav ul li:last-of-type a /* Instead of using class "noborder" */
+{
+    border-right: none;
+}
+
+
+/* Content area styling */
+
+main
+{
+    margin: 50px 30px;
+    height: 100%; /* This is necessary to make sure the contentarea fills out all the space to make the site fill out the whole browser window as set in line 14 where the body height is set to 100vh. Without this the page will not fill the whole window and the footer will be placed right below the main-area in the middle of the window */
+}
+
+h2, p
+{
+    margin-bottom: 20px;
+}
+
+article
+{
+    display: flex;
+    /* Displayed as a flex-box to control the placement of the text next to the picture */
+}
+
+article div:first-of-type /* Instead of using classes left-column and right-column. Divs are still necessary to group objects/flexitems in the flex-container */
+{
+    width: 60%;
+}
+
+article div:last-of-type /* Images not in divs can be difficult to control if they become their own flex-item. I always put images in divs to have better control over their sizing and placement in a flexbox */
+{
+    width: 40%;
+    text-align: right;  
+    /* Text-align also applies to images. I could have made the overlying div a new flexbox container to control the placement of the img within the div. I would then have used the following code to achieve the same effect:
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;  */
+}
+
+/* Footer styling */
+
+footer
+{
+    justify-content: center;
+    /* Overriding the justify-content: space-between set in line 49 on both nav and footer */
+}

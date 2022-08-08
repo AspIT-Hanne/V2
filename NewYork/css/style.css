@@ -32,6 +32,11 @@ header h1
     color: #bae4e2;
 }
 
+header a
+{
+    text-decoration: none;
+}
+
 .left
 {
     position: absolute;

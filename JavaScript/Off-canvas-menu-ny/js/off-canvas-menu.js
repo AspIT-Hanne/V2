@@ -3,14 +3,17 @@ var navul = document.querySelector("#navigation");
 
 menuicon.addEventListener("click", function(e)
 {
-    if(navul.classList.contains("open"))
-    {
-        navul.classList.remove("open");
-        menuicon.classList.remove("close-icon");
-    }
-    else
-    {
-        navul.classList.add("open");
-        menuicon.classList.add("close-icon");
-    }    
+
+    navul.classList.toggle("open");
+    menuicon.classList.toggle("close-icon");
+    // if(navul.classList.contains("open"))
+    // {
+    //     navul.classList.remove("open");
+    //     menuicon.classList.remove("close-icon");
+    // }
+    // else
+    // {
+    //     navul.classList.add("open");
+    //     menuicon.classList.add("close-icon");
+    // }    
 });

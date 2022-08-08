@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    width: 100vw;
+    height: 100vh;
+    color: hsl(209, 10%, 100%);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 80px auto 80px;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+
+.griditem
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.griditem section
+{
+    margin: 0 2rem;
+}
+
+.griditem article
+{
+    margin: 2rem 0;
+}
+
+header
+{
+    grid-area: header;
+    background-color: hsl(209, 50%, 30%);
+}
+
+aside.griditem /* Virker ikke med kun aside pga specificity - overrides af .griditem display: flex - snak om specificity! */
+{
+    background-color: hsl(209, 80%, 50%);
+}
+
+nav
+{
+    grid-area: nav;
+    background-color: hsl(209, 30%, 60%);
+}
+
+main
+{
+    grid-area: main;
+    background-color: hsl(209, 20%, 80%);
+}
+
+footer
+{
+    grid-area: footer;
+    background-color: hsl(209, 50%, 30%);
+}
+
+@media only screen and (min-width: 1000px)
+{
+    body
+    {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr 4fr 1fr;
+        grid-template-areas: 
+        "header header header header header header"
+        "side1 nav main main main side2"
+        "footer footer footer footer footer footer";
+    }
+
+    aside:first-of-type
+    {
+        grid-area: side1;
+        
+    }
+
+    aside:last-of-type
+    {
+        grid-area: side2;
+    }
+
+    aside.griditem /* Virker ikke med kun aside pga specificity - overrides af .griditem display: flex */
+    {
+        display: flex;
+    }
+}

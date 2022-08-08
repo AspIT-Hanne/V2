@@ -1,0 +1,243 @@
+/* Reset of all margins and paddings */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+/* Main styling */
+
+body
+{
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr); /* Opret 7 kolonner, som er lige brede (1fr) */
+    grid-template-rows: 100px 40px auto auto 40px; /* Opret 5 rækker med både specifik og automatisk højde */
+    grid-template-areas: /* Fortæl hvilke områder, der skal være hvorhenne i vores grid - hold øje med, at der er 7 kolonner i hver række og 5 rækker i alt */
+        "header header header header header header header"
+        "topnav1 topnav2 topnav3 topnav4 topnav5 topnav6 topnav7"
+        "sidebar mainleft1 mainleft1 mainleft1 mainright1 mainright1 mainright1"
+        "sidebar mainleft2 mainleft2 mainleft2 mainright2 mainright2 mainright2"
+        "footer footer footer footer footer footer footer";
+}
+
+/* Header styling */
+
+header
+{
+    background-color: #CCCCCC;
+    height: 100px;
+    grid-area: header;
+}
+
+header img
+{
+    height: 100px;
+}
+
+header img:last-of-type
+{
+    float: right;
+}
+
+/* General menu styling - applies to both menus (and footer for some properties) */
+
+nav ul, body > li
+{
+    list-style-type: none;
+    line-height: 40px;
+}
+
+nav ul a
+{
+    padding: 0 2em;
+}
+
+nav ul a, footer a, body > li a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+body > li:hover, nav.side ul li:hover
+{
+    background-color: #CCCCCC;
+}
+
+body > li:hover a, nav.side ul li:hover a
+{
+    color: rgba(50, 54, 84, 0.8);
+}
+
+body > li:nth-of-type(1)
+{
+    grid-area: topnav1;
+}
+
+body > li:nth-of-type(2)
+{
+    grid-area: topnav2;
+}
+
+body > li:nth-of-type(3)
+{
+    grid-area: topnav3;
+}
+
+body > li:nth-of-type(4)
+{
+    grid-area: topnav4;
+}
+
+body > li:nth-of-type(5)
+{
+    grid-area: topnav5;
+}
+
+body > li:nth-of-type(6)
+{
+    grid-area: topnav6;
+}
+
+body > li:nth-of-type(7)
+{
+    grid-area: topnav7;
+}
+
+
+/* Top navigation styling (and some also apply for footer) */
+
+footer, body > li
+{
+    height: 40px;
+    background-color: #565952;
+    color: white;
+}
+
+body > li
+{
+    border-right: 1px solid white;
+}
+
+body > li:last-of-type a
+{
+    border-right: none;
+}
+
+body > li a::before
+{
+    content: "🞂";
+    padding-right: 0.5rem;
+    color: rgba(50, 54, 84, 0.8);
+}
+
+/* Side navigation styling */
+
+nav
+{
+    height: 100%;
+    background-color: #CCCCCC;
+    grid-area: sidebar;
+}
+
+nav.side ul
+{
+    background-color: rgba(50, 54, 84, 0.8);
+}
+
+nav.side ul li a
+{
+    display: block;
+    border-bottom: 1px solid white;
+    margin: 0 1rem;
+}
+
+nav.side ul li:last-of-type a
+{
+    border-bottom: none;
+}
+
+/* Footer styling */
+
+footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 1200px;
+    text-align: center;
+    line-height: 40px;
+    grid-area: footer;
+}
+
+/* Styling of content area */
+
+main
+{
+    /* 18% padding on left side to account for the sidebar nav that is 15% wide */
+    padding: 2em 2em 2em 18%; 
+}
+
+/* Section size and positioning */
+
+article
+{
+    height: 100%;
+    font-size: small;
+}
+
+article:first-of-type
+{
+    grid-area: mainleft1;
+}
+
+article:nth-of-type(2)
+{
+    grid-area: mainright1;
+}
+
+article:nth-of-type(3)
+{
+    grid-area: mainleft2;
+}
+
+article:last-of-type
+{
+    grid-area: mainright2;
+}
+
+/* Article styling */
+
+article
+{
+    margin-bottom: 5em;
+}
+
+article img
+{
+    float:left;
+    margin-right: 1em;
+}
+
+article p:first-of-type::first-line
+{
+    color: rgba(50, 54, 84, 0.9);
+    line-height: 1rem;
+    padding-bottom: 2px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+h2
+{
+    color: #565952;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #565952;
+}
+

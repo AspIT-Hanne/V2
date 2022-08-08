@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript formularer</title>
+</head>
+<body>
+    <h2>Opgave 1: Indtast venligst fornavn og efternavn</h2>
+    <form id="udskrivnavn">
+        <input type="text" name="firstname">
+        <input type="text" name="lastname">
+        <input type="submit" name="firstsubmit" value="Indsend" id="namesubmitbtn">
+    </form>
+
+    <br><br><hr><br><br>
+    <h2>Opgave 2: Indtast venligst to tal, som så lægges sammen</h2>
+    <form id="addition">
+        <input type="number" name="firstnumber">
+        <input type="number" name="secondnumber">
+        <input type="submit" name="addsubmit" value="Indsend">
+    </form>
+
+    <br><br><hr><br><br>
+
+    <h2>Opgave 3: Indtast venligst et beløb, som der tillægges moms og fratrækkes 10% rabat</h2>
+    <form id="momsrabat">
+        <input type="number" name="beloeb">
+        <input type="submit" name="momsrabatsubmit" value="Indsend">
+    </form>
+
+    <br><br><hr><br><br>
+
+    <h2>Opgave 4: Indtast venligst en email-adresse</h2>
+    <form id="mailtest">
+        <input type="text" name="mail">
+        <input type="submit" name="testmail" value="Indsend">
+    </form>
+
+    <script src="js-forms.js"></script>
+</body>
+</html>

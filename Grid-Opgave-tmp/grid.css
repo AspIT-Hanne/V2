@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    width: 100vw;
+    height: 100vh;
+    color: hsl(209, 10%, 100%);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 80px auto 80px;
+    grid-template-areas: 
+    "header"
+    "menu"
+    "main"
+    "footer";
+}
+
+.griditem
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.griditem section
+{
+    margin: 0 2rem;
+}
+
+.griditem article
+{
+    margin: 1rem 0;
+}
+
+.griditem h3
+{
+    text-align: center;
+}
+
+header
+{
+    background-color: hsl(209, 50%, 30%);
+    grid-area: header;
+}
+
+nav
+{
+    background-color: hsl(209, 30%, 60%);
+    grid-area: menu;
+}
+
+main
+{
+    background-color: hsl(209, 20%, 80%);
+    grid-area: main;
+}
+
+aside.griditem
+{
+    background-color: hsl(209, 80%, 50%);
+    display: none;
+}
+
+footer
+{
+    background-color: hsl(209, 50%, 30%);
+    grid-area: footer;
+}
+
+@media only screen and (min-width: 1200px)
+{
+    body
+    {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr 4fr 1fr;
+        grid-template-areas:
+        "header header header header header header"
+        "side1 menu main main main side2"
+        "footer footer footer footer footer footer";
+    }
+
+    aside:first-of-type
+    {
+        grid-area: side1;
+    }
+
+    aside:last-of-type
+    {
+        grid-area: side2;
+    }
+
+    aside.griditem
+    {
+        display: flex;
+    }
+}

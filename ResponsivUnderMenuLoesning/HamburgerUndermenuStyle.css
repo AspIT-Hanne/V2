@@ -1,0 +1,257 @@
+/* root reset */
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+main
+{
+    margin: 0.5rem;
+}
+
+/* Make sure images are never bigger than width of viewport */
+main section article img
+{
+    width: 100%;
+}
+
+h1, p
+{
+    margin: 2rem 0;
+}
+
+nav
+{
+    height: 50px;
+    background-color: hsl(0, 0%, 50%);
+    line-height: 50px;
+}
+
+/* Styling of hamburger icon / close menu icon and checkbox for mobile menu */
+nav .menu-btn, nav>img
+{
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Seperate styling for checkbox. Highest z-index makes sure that it is the top item so when user clicks in that area he will always hit the checkbox. After finishing the styling checkbox gets opacity: 0 to make it see-through */
+nav .menu-btn
+{
+    display: block;
+    width: 40px;
+    z-index: 7;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Seperate styling for hamburger icon / close menu icon. Z-index places them in front of ul/hamburger menu but behind checkbox */
+nav>img
+{
+    z-index: 6;
+}
+
+/* Styling for menu on mobile - not displayet until checkbox is checked (user clicked the menu icon). Finish styling before applying display: none. Z-index puts it in front of the rest of the webpage but behind menu-icons and checkbox. Overflow-x hidden ensures no horisontal scrollbar */
+nav ul
+{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 60%, 0.95);
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    overflow-x: hidden;
+}
+
+nav ul li
+{
+    padding: 0.8rem 0;
+}
+
+/* Styling of links in hamburger menu */
+nav ul li a
+{
+    text-decoration: none;
+    color: darkslategray;
+    padding: 1rem;
+}
+
+/* Styling of first level menu items */
+nav ul li h2
+{
+    color: gainsboro;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 2rem;
+    display: inline-block;
+}
+
+/* Styling of second level in menu (submenu) */
+nav ul li ul
+{
+    background-color: hsla(0, 0%, 80%, 0.5);
+    text-transform: none;
+    font-size: 20px;
+}
+
+/* Styling of links in submenu */
+nav ul li ul li a
+{
+    padding-right: 4rem;
+}
+
+nav ul li ul li:hover
+{
+    background-color: hsla(0, 0%, 20%, 0.6);
+}
+
+nav ul li ul li:hover a
+{
+    color: gainsboro;
+}
+
+/* If checkbox is checked display hamburger menu as flexbox */
+nav .menu-btn:checked ~ul
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    
+}
+
+/* Styling of list items in menu */
+nav .menu-btn:checked ~ul li
+{
+    text-align: right;
+    width: 100%;
+    position: relative;
+
+}
+
+/* Styling of images in hamburger menu (caret down icons) */
+nav .menu-btn:checked ~ul li img
+{
+    display: inline-block;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/* Styling of checkbox next to menu items - submenu checkbox */
+nav .menu-btn:checked ~ul li .submenu-btn 
+/* If first checkbox is checked (topmenu) style on second checkbox which has class .submenu-btn */
+{
+    display: block;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    position: absolute; /* If above item (li) has position defined this item will position related to the above item - so right is related to the right border of the above li-item and top is related to the top border of the above li-item */
+    right: 5px;
+    top: 10px;
+    margin-top: 5px;
+    z-index: 7; /* Same z-index as topmenu checkbox to ensure that it is in front */
+    opacity: 0;
+}
+
+/* Styling of submenus when opened (submenu checkbox checked and of course topmenu checkbox also checked - otherwise the hamburgermenu wouldn't be open at all) */
+nav .menu-btn:checked ~ul li .submenu-btn:checked ~ul
+{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+}
+
+/* If menu checkbox is checked don't display menu icon. If menu checkbox is not checked don't display menu close icon */
+nav .menu-btn:checked ~ .menuicon, nav .menu-btn ~ .closeicon
+{
+    display: none;
+}
+
+/* If menu checkbox is not checked display menu icon. If menu checkbox is checked display menu close icon */
+nav .menu-btn ~ .menuicon, nav .menu-btn:checked ~ .closeicon
+{
+    display: block;
+}
+
+
+@media only screen and (min-width: 768px)
+{
+    nav
+    {
+        height: 50px;
+        background-color: hsl(0, 0%, 50%);
+        line-height: 50px;
+    }
+
+    /* Do not display menu icons and checkboxes on desktop */
+    nav img, nav .menu-btn, nav .submenu-btn, nav .menu-btn ~ .menuicon
+    {
+        display: none;
+    }
+
+    /* Display menu as horisontal flexbox */
+    nav ul
+    {
+        display: flex;
+        justify-content: space-evenly;
+        height: 50px;   
+    }
+
+    nav ul li
+    {
+        padding: 0;
+    }
+        
+    nav ul li:hover
+    {
+        background-color: hsla(0, 0%, 20%, 0.8);
+    }
+
+    nav ul li h2
+    {
+        color: gainsboro;
+    }
+
+    /* Styling of dropdown menus. Dropdown menus are by default not shown */
+    nav ul li ul
+    {
+        display: none;
+        position: relative;
+        background-color: hsl(0, 0%, 80%);
+        text-transform: none;
+        width: 235px;
+        font-size: 20px;
+        text-align: left;
+        height: auto;
+    }
+
+    nav ul li ul li
+    {
+        display: block;
+        padding: 0 1rem;
+    }
+
+    nav ul li ul li a
+    {
+        padding-right: 0;
+    }
+
+    /* Display dropdown menu when user hovers topmenu item */
+    nav ul li:hover ul
+    {
+        display: block;
+    }
+}
+

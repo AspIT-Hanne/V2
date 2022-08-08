@@ -16,23 +16,18 @@ header, footer
     height: 50px;
     background-color: #666;
     color: #fff;
+    flex-shrink: 1;
 }
 
 .content
 {
-    height: 100%;
-    width: 100%;
-}
-
-.columns
-{
+    flex: auto;
     display: flex;
-    height: 100%;
 }
 
 .main
 {
-    width: 100%;
+    width: 60%;
     background-color: #ccc;
 }
 
