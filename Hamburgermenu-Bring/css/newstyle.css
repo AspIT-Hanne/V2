@@ -78,9 +78,20 @@ nav img.closeicon
 
 nav ul
 {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    z-index: 10;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(0, 0%, 100%, 0.95);
     list-style-type: none;
     padding-top: 1rem;
+    transform: translateX(100%);
+    transition: all 0.5s;
 }
 
 .menuopener
@@ -93,16 +104,7 @@ nav ul
 
 .menuopener:checked ~ul
 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: fixed;
-    z-index: 10;
-    top: 3rem;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: hsla(0, 0%, 100%, 0.95);
+    transform: translateX(0%);
 }
 
 nav ul a

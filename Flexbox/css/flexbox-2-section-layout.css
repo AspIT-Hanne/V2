@@ -16,7 +16,7 @@ html, body
     flex-direction: column;
 }
 
-.header
+.header, .footer
 {
     height: 50px;
     background-color: #666;

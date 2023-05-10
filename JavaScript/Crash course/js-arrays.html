@@ -10,6 +10,11 @@
     <script>
         let user = {fornavn: "Hanne", efternavn: "Lund", by: "Vojens", alder: 48};
         console.log(user);
+
+        for(let key in user)
+        {
+            console.log(key + ": " + user[key]);
+        }
         
         // Opgave 3
         const fruits = ["Banana", "Orange", "Apple", "Mango"];
