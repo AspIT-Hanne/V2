@@ -5,9 +5,13 @@
 
 body
 {
-    width: 100vw;
     height: 100vh;
     color: hsl(209, 10%, 100%);
+}
+
+p
+{
+    margin: 1rem;
 }
 
 header
@@ -23,6 +27,8 @@ nav
 main
 {
     background-color: hsl(209, 20%, 80%);
+    color: hsl(209, 20%, 10%);
+    padding-bottom: 0.1rem;
 }
 
 aside
