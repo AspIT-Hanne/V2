@@ -1,0 +1,36 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: Arial, sans-serif;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body > *
+{
+    padding: 1rem;
+}
+
+header
+{
+    background-color: hsl(0, 40%, 80%);
+}
+
+nav, footer
+{
+    background-color: hsl(0, 20%, 70%);
+}
+
+main
+{
+    background-color: hsl(0, 20%, 93%);
+    flex-grow: 1;
+}
