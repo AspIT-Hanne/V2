@@ -8,8 +8,6 @@
 body
 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
 }
 
 nav, footer, section:nth-of-type(3n)
@@ -25,12 +23,6 @@ section:nth-of-type(3n+1)
 ul
 {
     list-style: none;
-}
-
-nav ul
-{
-    display: flex;
-    justify-content: space-around;
 }
 
 nav ul li
@@ -49,11 +41,15 @@ nav ul li a
     color: black;
 }
 
+h1, h2
+{
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
 section
 {
     min-height: 25vh;
-    display: flex;
-    flex-direction: column;
 }
 
 section, footer
@@ -68,41 +64,14 @@ section>img
 
 .intro
 {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     color: white;
     text-align: center;
     padding-bottom: 2rem;
 }
 
-.columns, .services article, .services article div
-{
-    display: flex;
-}
-
 .services article
 {
-    flex-wrap: wrap;
     margin: 0 auto;
-    justify-content: center;
-}
-
-.services article div
-{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.columns
-{
-    column-gap: 0.8rem;
-}
-
-.columns div
-{
-    flex: 1;
 }
 
 .intro
@@ -113,4 +82,17 @@ section>img
 .customerservice img
 {
     max-width: 100%;
+}
+
+@media screen and (min-width: 768px)
+{
+    h1
+    {
+        font-size: 3rem;
+    }
+
+    article, footer .columns
+    {
+        width: 50%;
+    }
 }

@@ -7,6 +7,8 @@ body
 {
     height: 100vh;
     color: hsl(209, 10%, 100%);
+    display: flex;
+    flex-direction: column;
 }
 
 p
@@ -29,10 +31,35 @@ main
     background-color: hsl(209, 20%, 80%);
     color: hsl(209, 20%, 10%);
     padding-bottom: 0.1rem;
+    flex-grow: 1;
+}
+
+main section
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main article
+{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+main article div
+{
+    width: 30%;
+    background-color: hsl(209, 30%, 60%);
+    border: 1px solid hsl(209, 30%, 20%);
 }
 
 aside
 {
+    display: none;
     background-color: hsl(209, 80%, 50%);
 }
 

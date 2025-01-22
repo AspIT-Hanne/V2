@@ -20,28 +20,28 @@
     <main>
         <section>
             <h2>MAIN</h2>
-            <h3>At få et website til at fylde hele højden af en skærm</h3>
+            <h3>Placering af elementer</h3>
 
             <article>
-                <h4>Få body'en til at fylde hele højden</h4>
-                <p>
-                    For at få et website til at fylde hele højden på en skærm - også selvom der ikke er indhold nok til det - skal du først og fremmest sørge for, at sidens body fylder hele skærmen - dine elementer kan aldrig blive større end det øverste element. Så hvis body'en ikke fylder hele skærmen i højden, kan underliggende elementer heller ikke komme til det. 
-                </p>
-                <p>
-                    Herefter kan du bruge enten flex-grow: 1 eller flex: 1 til at give elementet lov til at udfylde evt. ekstra plads.
-                </p>
-                <h4>Flex-grow til at få et element til at fylde pladsen ud</h4>
-                <p>
-                    Flex-grow angiver hvor meget et flex-item (en child af der, hvor du har defineret display: flex) må vokse sammenlignet med de øvrige flex-items. Hvis du angiver flex-grow: 0 må elementet ikke blive større. Hvis du angiver flex-grow: 1 (og de øvrige ikke har angivet en flex-grow (0 er standard)), så vil det element, som er det eneste, der må fylde mere, tage alt overskydende plads i parent elementet.
-                </p>
-                <h4>Du kan også bruge forkortelsen "flex"</h4>
-                <p>
-                    Hvis du bruger forkortelsen flex: 1; så er det det samme som at skrive flex-grow: 1; flex-shrink: 1; flex-basis: 0; At elementet må vokse (flex-grow: 1), må blive mindre (flex-shrink: 1 - hvis elementet ikke må blive mindre angiver man flex-shrink: 0) og at det skal starte med en bredde på 0 (flex-basis: 0) og derefter tage den plads, som indholdet fylder. 
-                </p>
-                <h4>Hvilket element skal have flex-grow her?</h4>
-                <p>
-                    I opgaven her, er det dit main-område, der skal kunne udvide sig og fylde pladsen ud og derfor skal have flex-grow: 1 (eller flex: 1).
-                </p>
+                <div>
+                    <h4>Lorem ipsum 1</h4>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ut illum atque voluptatibus delectus laborum, quaerat dolore ipsam velit tempore nisi quos repellendus repudiandae ipsa quas molestiae minus, cupiditate suscipit.
+                    </p>
+                </div>
+                <div>
+                    <h4>Lorem ipsum 2</h4>  
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ut illum atque voluptatibus delectus laborum, quaerat dolore ipsam velit tempore nisi quos repellendus repudiandae ipsa quas molestiae minus, cupiditate suscipit.
+                    </p>
+                </div>
+                <div>
+                    <h4>Lorem ipsum 3</h4>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ut illum atque voluptatibus delectus laborum, quaerat dolore ipsam velit tempore nisi quos repellendus repudiandae ipsa quas molestiae minus, cupiditate suscipit.
+                    </p>
+                </div>
+                
             </article>
         </section>
 
