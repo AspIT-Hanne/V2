@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>RWD opgaver</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Her skal du indsætte checkbox og ikoner til mobilmenu.
+             Husk også at kopiere det til de andre sider.
+            <input type="checkbox">
+            <img src="" alt="hamburger menu icon">
+            <img src="" alt="close menu icon"> -->
+            
+            <ul>
+                <li><a href="index.html">RWD grundlæggende</a></li>
+                <li><a href="rwdflex.html">RWD flexbox</a></li>
+                <li><a href="rwdmenu.html">RWD menu</a></li>
+                <li><a href="rwdbilleder.html">RWD billeder</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Opgaver i responsivt webdesign</h1>        
+     
+        <section>
+            <article>
+                <h2>Opgave 3: Responsiv menu</h2>
+
+                <h3>Mål: Lav en responsiv navigationsmenu, der skifter mellem horisontal og en hamburger-menu på mindre skærme, med udelukkende HTML og CSS ved hjælp af det såkaldte "checkbox-trick".</h3>
+
+                <p>Vær opmærksom på, at menulinjen i desktop-versionen er lavet som en vandret flexbox. Den skal i mobil menuen laves om til en lodret flexbox.</p>
+
+                <p>Desktop menuen er allerede lavet færdig for dig. Det er den styling, der slår igennem på sitet lige nu. Du skal lave mobil menuen.</p>
+
+                <h2>"Checkbox tricket" til mobilmenuer</h2>
+
+                <p>Hamburger menuen er baseret på et lille trick, som kaldes "checkbox tricket". Det laves ved at sætte en gennemsigtig checkbox foran hamburger menu ikonet (og lukke-ikonet), så i stedet for at klikke på de to ikoner, så klikker man i virkeligheden i en checkbox (afkrydsningsboks) og enten sætter eller fjerner et kryds i den. Checkboxen er gjort usynlig med opacity og ligger henover ikonerne til at åbne og lukke menuen, så brugeren får aldrig checkboxen at se (eller de krydser, som han/hun sætter, når menuen bliver åbnet og lukket).</p>
+
+                <p>I din HTML-kode skal du placere dine ikoner (og checkboxen) lige over (og på samme niveau - som søskende til) din ul med din menu i. Der er gjort klar til ikonerne og checkboxen på denne side, så du kan se, hvordan de skal placeres. Når du har lavet koden færdig, skal du kopiere det til de andre sider.</p>
+
+                <p>Du placerer dit åbne- og lukke-ikon til menuen (og checkboxen) oven i hinanden ved at bruge <code>position: absolute</code>. Sørg for at checkboxen ligger forrest/øverst ved at give den et højere Z-index.</p>
+
+                <p>Sørg for, at hverken checkbox eller de to ikoner er synlige (<code>display: none</code>) på skærme større end 600px.</p>
+
+                <p>Det smarte ved det trick er, at man kan teste på, om brugeren har sat kryds i eller fjernet krydset i checkbox'en vha CSS.</p>
+
+                <p>CSS pseudo-selectoren :checked bruges til den styling, som skal slå igennem, når brugeren har klikket på checkboxen (hamburger menu ikonet).</p>
+
+                <p>Når checkboxen er :checked, har brugeren trykket på ikonet og menuen er åben. Derfor skal lukke-ikonet (krydset) vises og hamburger-ikonet skjules, når checkboxen er :checked.</p>
+                <p>Når checkboxen ikke er :checked, skal hamburger-ikonet vises og lukke-ikonet skjules.</p>
+
+                <p>Så hvis du styler på nav .menu-btn:checked ~ul, så styler du på den ul, som kommer i samme niveau som din checkbox (~ tegnet betyder, at den er søskende til din checkbox). Ul'en i samme niveau som din checkbox er din menu. Styling på .menu-btn:checked ~ul slår kun igennem, hvis brugeren har klikket på checkboxen og "sat kryds i den", selvom brugeren aldrig kommer til at se det kryds.</p>
+
+                <p>Så når checkboxen er :checked, vil menuen blive vist (du kan fx bruge <code>display: flex</code>), og når den ikke er :checked, vil menuen blive skjult (du kan fx bruge <code>display: flex</code> og <code>display: none</code>).</p>
+
+                </ul>                                   
+            </article>
+        </section>
+    </main> 
+
+    <footer>
+        <p>&copy; 2025 RWD Opgaver</p>
+    </footer>
+
+</body>
+</html>

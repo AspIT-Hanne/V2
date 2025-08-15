@@ -4,6 +4,7 @@
 {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root
@@ -137,22 +138,22 @@ h1, h2, h3
     margin-bottom: 1.5rem;
 }
 
-h1
-{
-    font-size: 2.5rem;
-}
+    h1
+    {
+        font-size: 2.5rem;
+    }
 
-h2
-{
-    font-size: 1.5rem;
-    margin-top: 3rem;
-}
+    h2
+    {
+        font-size: 1.5rem;
+        margin-top: 3rem;
+    }
 
-h3
-{
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
+    h3
+    {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
 
 section:not(.sidebar)
 {
@@ -210,7 +211,7 @@ section:not(.sidebar)
 .opskriftsnav
 {
     background-color: var(--orange-color);
-    margin-top: calc(80px + 1rem);
+    margin-top: 80px;
 }
 
 .opskriftsnav a
@@ -263,7 +264,7 @@ section:not(.sidebar)
     margin-bottom: 3rem;
 }
 
-.opskrifter .opskrift div:first-of-type
+.opskrift div:first-of-type
 {
     flex-shrink: 0;
 }
@@ -432,7 +433,7 @@ footer>div>div
         gap: 4rem;
     }
 
-    .opskrifter .opskrift div:first-of-type, .opskrifter img
+    .opskrifter img
     {
         width: 25%;
     }

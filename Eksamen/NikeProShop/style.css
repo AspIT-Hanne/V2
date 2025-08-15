@@ -6,7 +6,7 @@
 
 body
 {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 
@@ -85,7 +85,7 @@ nav ul
     display: none;
     width: 100vw;
     height: 100vh;
-    background-color: orange;
+    background-color: hsl(39, 100%, 50%);
     position: absolute;
     top: 0;
     z-index: 5;
@@ -111,9 +111,9 @@ nav ul li:hover
 nav ul li a
 {
     text-decoration: none;
-    color: whitesmoke;
+    color: hsl(0, 0%, 96%);
     padding: 0 2rem;
-    font-size: 20px;
+    font-size: 1.2rem;
     display: block;
 }
 
@@ -323,7 +323,7 @@ footer h2, footer h4
     {
         position: absolute;
         top: 0;
-        opacity: 0;
+        /* opacity: 0; */
         transition: opacity 1s;
     }
 
@@ -363,8 +363,17 @@ footer h2, footer h4
 
     .floattext img
     {
-        margin-right: 0.3rem;
         width: 50%;
+    }
+
+    .floattext img.left
+    {
+        margin-right: 1rem;
+    }
+
+    .floattext img.right
+    {
+        margin-left: 1rem;
     }
 
     .floattext p

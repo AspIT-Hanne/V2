@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>RWD opgaver</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">RWD grundlæggende</a></li>
+                <li><a href="rwdflex.html">RWD flexbox</a></li>
+                <li><a href="rwdmenu.html">RWD menu</a></li>
+                <li><a href="rwdbilleder.html">RWD billeder</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Opgaver i responsivt webdesign</h1>        
+     
+        <section>
+            <article>
+                <h2>Opgave 4: Responsive billeder</h2>
+
+                <h3>Mål: Lær at optimere billeder til forskellige skærmstørrelser ved at bruge <code>picture</code>-elementet og <code>srcset-</code>attributten.</h3>
+
+                <p>Forståelse af responsive billeder er vigtigt for at sikre, at dit websted ser godt ud på alle enheder. Ved at bruge <code>picture</code>-elementet og <code>srcset</code>-attributten kan du levere forskellige billedversioner til forskellige skærmstørrelser og opløsninger.</p>
+
+                <p>Man bruger ofte <code>srcset</code>-attributten, når man ønsker at indsætte det samme billede på siden men i forskellige opløsninger til forskellige skærmstørrelser.</p>
+
+                <p>Man bruger ofte <code>picture</code>-elementet, når man ønsker at vise forskellige billeder afhængigt af skærmstørrelsen. Fx. en vertikal version til mobile enheder og en horisontal version til desktop.</p>
+
+                <p>Hvis du har brug for at læse mere om responsive billeder og hvordan de indsættes, kan du læse mere på <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images" target="_blank">MDN Web Docs - Responsive Images</a>.</p>
+
+                <h4>Del 1: <code>img</code> med <code>srcset</code></h4>
+                
+                <p>Brug de tre forskellige versioner af billedet af HCAndersen1 i forskellige størrelser (small, medium og large).</p>
+
+                <p>Indsæt et <code>img</code>-element og brug <code>srcset</code> til at referere til de forskellige billeder, og angiv deres bredde med <code>w</code>-deskriptoren. Brug <code>sizes</code>-attributten til at fortælle browseren, hvornår hvert billede skal bruges, og hvor meget de må fylde. F.eks.: <code>&lt;img srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1200w" sizes="(max-width: 600px) 100vw, (max-width: 900px) 100vw, 50vw" alt="Beskrivende tekst"&gt;</code>.</p>
+
+                <p>Tilpas koden ovenfor til de rigtige billede-navne og størrelser og tilpas også de breakpoints, der er.</p>
+
+                <p>Forklar kort i en kommentar, hvad w og vw betyder.</p>
+
+                <p>Forklar kort i en kommentar, hvorfor du tror, du oplever, at den skifter mellem de forskellige billeder, når du når over det største breakpoint (hvis du oplever det).</p>
+
+                <p>Indsæt det responsive billede af H.C. Andersen her:</p>
+
+                <p>Vær opmærksom på, at nogle browsere indlæser billeder i deres cache, og hvis en bedre version allerede findes i cachen, vil den blive brugt i stedet for at hente en ny fra serveren. Så det kan se ud som om, dit srcset ikke virker, men det er bare browseren, der forsøger at optimere. Du kan altid gennemtvinge at browseren skal hente det aktuelle og relevante billede fra serveren, ved at reloade siden med ctrl+F5 eller ctrl+r. Dette problem opleves oftere i Chromium-baserede browsere (Chrome og Edge) end fx Firefox.</p>
+            </article>
+            <article>
+                <h4>Del 2: <code>picture</code>-elementet</h4>
+
+                <p>Brug billedet HCAndersen3, der findes i to forskellige versioner: en vertikal version og en horisontal version.</p>
+
+                <p>Brug <code>picture</code>-elementet til at vise den vertikale version på små skærme (f.eks. op til 600px) og den horisontale version på store skærme. Du skal bruge <code>source</code>-elementet med <code>media</code>-attributten (<code>&lt;source media="(min-width: 600px)" srcset="horizontal.jpg"&gt;</code>).</p>
+                
+                <p>Slut af med et <code>img</code>-element, der fungerer som fallback for browsere, der ikke understøtter <code>picture</code>.         
+                </p>
+                
+                <p>Indsæt det responsive billede af H.C. Andersen med <code>picture</code>-elementet her:</p>
+            </article>
+        </section>
+    </main> 
+
+    <footer>
+        <p>&copy; 2025 RWD Opgaver</p>
+    </footer>
+
+</body>
+</html>

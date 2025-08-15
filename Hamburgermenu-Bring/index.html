@@ -7,38 +7,46 @@
     <title>Bring Grid og Hamburgermenu</title>
 </head>
 <body>
-    <header>
+    <header >
         <img src="img/logo.svg" alt="bring logo">
-        <form method="post">
+        <!-- <form method="post">
             <input type="search" name="track" placeholder="Indtast track and trace">
             <input type="image" class="search" value="submit" src="img/baseline-search-24px.svg">
-        </form>
+        </form> -->
         <nav>
             <input type="checkbox" class="menuopener">
             <img src="img/bars-solid.svg" class="menuicon">
             <img src="img/times-solid.svg" class="closeicon">
             <ul>
-                <li><a href="#">Hjem</a></li>
-                <li><a href="#">Tjenester</a></li>
-                <li><a href="#">Om Bring</a></li>
-                <li><a href="#">E-handel</a></li>
-                <li><a href="#">Modtagerservice</a></li>
-                <li><a href="#">Kundeservice</a></li>
-                <li><a href="#">Vil du være en af os?</a></li>
-                <li><a href="#">Kontakt os</a></li>
+                <li><a href="#top">Hjem</a></li>
+                <li><a href="#tjenester">Tjenester</a></li>
+                <li><a href="#om">Om Bring</a></li>
+                <li><a href="#ehandel">E-handel</a></li>
+                <!-- <li><a href="#">Modtagerservice</a></li> -->
+                <li><a href="#kundeservice">Kundeservice</a></li>
+                <!-- <li><a href="#">Vil du være en af os?</a></li> -->
+                <li><a href="#kontakt">Kontakt os</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <img src="img/hero-04.jpg" alt="bring transport">
+        <section id="top">
             <article>
-                <h1>Din vej gennem Norden</h1>
+                <h1>
+                    <span style="animation-delay: 1.1s;">D</span>
+                    <span style="animation-delay: 1.2s;">i</span>
+                    <span>n</span>
+                    <span> </span>
+                    <span>v</span>
+                    <span>e</span>
+                    <span>j</span>
+                    <span> </span>
+                    gennem Norden</h1>
                 <p>Komplette løsninger til transport af gods, pakker og post</p>
             </article>
         </section>
-        <section>
+        <section id="tjenester">
             <h2>Tjenester</h2>
             <article class="services">
                 <div class="service-item">
@@ -72,7 +80,7 @@
             </article>
         </section>        
 
-        <section>
+        <section id="om">
                 <h2>Om Bring</h2>
 
                 <img src="img/smiley.png" alt="smiley happy customers glade kunder">
@@ -94,7 +102,7 @@
                 <a href="#" class="readmore">Læs mere</a>
             
         </section>
-        <section>
+        <section id="ehandel">
             <article>
                 <h2>E-handel</h2>
 
@@ -105,18 +113,7 @@
                 <a href="#" class="readmore">Læs mere</a>
             </article>
         </section>
-        <section>
-            <article>
-                <h2>Modtagerservice</h2>
-
-                <img src="img/truck.png" alt="bring modtageservice">
-
-                <h3>Her kan du som er modtager af en pakke, der er sendt med Bring, få svar på de oftest stillede spørgsmål og se vores telefonnumre samt e-mailadresser.</h3>
-
-                <a href="#" class="readmore">Læs mere</a>
-            </article>
-        </section>
-        <section>
+        <section id="kundeservice">
             <h2 class="absolute">Kundeservice</h2>
             
             <article class="columns">
@@ -138,18 +135,9 @@
 
             <a href="#" class="readmore">Læs mere</a>
         </section>
-        <section>
-            <img src="img/budbil-02.jpg" alt="bring budbil">
-            <article>
-                <h2>Vil du være en af os?</h2>
-
-                <a href="#" class="seekjob">Søg job</a>
-            </article>
-            
-        </section>
         
     </main>
-    <footer>
+    <footer id="kontakt">
             <h2>Kontakt os</h2>
 
             <article class="columns">

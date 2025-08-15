@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>RWD opgaver</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">RWD grundlæggende</a></li>
+                <li><a href="rwdflex.html">RWD flexbox</a></li>
+                <li><a href="rwdmenu.html">RWD menu</a></li>
+                <li><a href="rwdbilleder.html">RWD billeder</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Opgaver i responsivt webdesign</h1>        
+     
+        <section>
+            <article>
+                <h2>Opgave 2: Flexbox i RWD</h2>
+
+                <h3>Mål: Anvend Flexbox til at skabe fleksible, responsive layouts, der tilpasser sig skærmstørrelsen.</h3>
+
+                <p>De to næste articles indeholder opgaverne. De sidste tre articles på siden indeholder tips til at løse opgaven.</p>
+            </article>
+
+            <article>
+                <p>Lav koden til mobiltelefoner udenfor media queries (mobile first). I din mobilkode skal:</p>
+                <ul>
+                    <li>din section opstilles som en flexbox med elementerne under hinanden</li>
+                    <li>din section flexbox have et gap på 1rem.</li>
+                </ul>
+            </article>
+
+            <article>
+                <p>Brug en @media query, der gælder, når skærmbredden er 600px eller større. Inden for denne query skal:</p>
+                <ul>
+                    <li>din section opstilles som en flexbox med elementerne ved siden af hinanden</li>
+                    <li>din section flexbox have et gap på 3rem</li>
+                    <li>der skal være plads til 3 articles pr. linje, og de skal fylde 30% hver.</li>
+                    <li>hvis der er flere end 3 articles, skal de fortsætte på næste linje.</li>
+                    <li>dine articles skal fordeles i hele bredden.</li>
+                </ul>                                   
+            </article>
+            <article>
+                <p>Hvis du skal styre, om flexboxe må blive større eller mindre, kan du bruge følgende properties:</p>
+                <ul>
+                    <li><code>flex-grow</code> fortæller et element, om det må blive større. 0 betyder at det ikke må blive større, 1 betyder, at det må blive større.</li>
+                    <li><code>flex-shrink</code> fortæller et element, om det må blive mindre. 0 betyder at det ikke må blive mindre, 1 betyder, at det må blive mindre.</li>
+                    <li><code>flex-basis</code> fortæller et element, hvilken størrelse det skal have som udgangspunkt, før der tages højde for <code>flex-grow</code> og <code>flex-shrink</code>.</li>
+                    <li>du kan skrive alle tre værdier i den samlede property <code>flex</code>, hvor første tal angiver <code>flex-grow</code>, andet tal angiver <code>flex-shrink</code> og tredje tal angiver <code>flex-basis</code>.</li>
+                </ul>                                   
+            </article>
+            <article>
+                <p>Hvis du skal placere elementer i en flexbox, kan du bruge følgende properties:</p>
+                <ul>
+                    <li><code>justify-content</code> styrer, hvordan elementerne placeres langs flexboxens hovedakse. Hvis flexboxen er "row", styrer <code>justify-content</code> den horisontale placering af elementerne.</li>
+                    <li><code>align-items</code> styrer, hvordan elementerne placeres på tværs af flexboxen. Hvis flexboxen er "row", styrer <code>align-items</code> den vertikale placering af elementerne.</li>           
+                </ul>
+                <p>Vær opmærksom på, at hvis du skal justere elementerne i højden, skal du sørge for, at din flexbox er højere end selve elementerne, ellers kan du ikke flytte rundt med dem.</p>                                  
+            </article>
+            <article>
+                <p>Du kan bruge følgende værdier til <code>justify-content</code> og <code>align-items</code>:</p>
+                <ul>
+                    <li><code>flex-start</code> placerer elementerne i starten af flexboxen.</li>
+                    <li><code>flex-end</code> placerer elementerne i slutningen af flexboxen.</li>
+                    <li><code>center</code> placerer elementerne i midten af flexboxen.</li>
+                    <li><code>space-between</code> placerer elementerne med lige meget plads mellem dem.</li>
+                    <li><code>space-around</code> placerer elementerne med lige meget plads omkring dem.</li>
+                </ul>                                   
+            </article>
+        </section>
+    </main> 
+
+    <footer>
+        <p>&copy; 2025 RWD Opgaver</p>
+    </footer>
+
+</body>
+</html>

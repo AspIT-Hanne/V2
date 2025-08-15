@@ -4,10 +4,17 @@
 #e1d8b9 sand
 #cb7d20 orange
 #952 accent orange (dark)
-#3c6b92 main blue
 #2c566a teal
 #c3cebc light green
 #7f7f7f accent gray
+#ddd background gray
+#666 text gray
+*/
+
+/*fonts guide:
+body: Georgia, "Times New Roman", Times, serif
+menulinks, comment header: Arial, Helvetica, sans-serif
+ad: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif
 */
 
 /*limited reset*/
@@ -185,6 +192,7 @@ main caption {
 	font-weight: bold;
 	font-size: 1.4em;
 	text-align: left;
+	margin-bottom: 1rem;
 }
 
 main table#quickFacts {
@@ -518,6 +526,7 @@ footer#pageFooter small {
 	display: grid;
 	width: 600px;
 	grid-template-columns: 1fr 1fr 1fr;
+	margin-bottom: 1rem;
 }
 
 .images2 img

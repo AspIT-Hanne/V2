@@ -1,0 +1,117 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(0, 1%, 29%);
+    color: hsl(0, 1%, 89%);
+    display: flex;
+    flex-direction: column;
+}
+
+main
+{
+    padding: 1rem;
+    flex: auto;
+}
+
+article
+{
+    padding: 20px;
+    background-color: hsl(0, 1%, 19%);
+    border-radius: 10px;
+}
+
+h1
+{
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+h2
+{
+    margin: 1rem 0;
+}
+
+h3, h4, li, p
+{
+    margin: 0.5rem 0;
+}
+
+header, footer
+{
+    background-color: hsl(0, 1%, 69%);
+    flex: 0 0 50px;
+}
+
+nav
+{
+    height: 100%;
+}
+
+nav ul, footer 
+{
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul a, footer
+{
+    text-decoration: none;
+    color: hsl(0, 1%, 19%);
+}
+
+nav ul li
+{
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li:hover
+{
+    background-color: hsl(0, 1%, 79%);
+    border-radius: 5px;
+}
+
+main ul
+{
+    list-style-position: inside;
+}
+
+main a
+{
+    color: hsl(56, 55%, 65%);
+    text-decoration: none;
+}
+
+main a:visited
+{
+    color: hsl(56, 55%, 45%);
+}
+
+code
+{
+    font-size: 1.05rem;
+    color: hsl(56, 55%, 85%);
+}
+
+img
+{
+    max-width: 100%;
+}
