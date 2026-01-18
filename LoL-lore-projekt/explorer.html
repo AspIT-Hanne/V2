@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Runeterra Explorer</title>
+    <link rel="stylesheet" href="style/style.css"> </head>
+<body class="theme-default">
+ <nav class="main-nav">
+        <a href="index.html" class="nav-logo ">HOME</a>
+        <div class="nav-container">
+            <button id="theme-toggle">Skift Tema (Light/Dark)</button>
+            <a href="all-champions.html" class="desktop-menu">ALL CHAMPIONS</a>    
+            <a href="explorer.html" class="desktop-menu">RUNETERRA EXPLORER</a>  
+            <input type="checkbox" id="menu-toggle"> 
+            
+            <label for="menu-toggle" class="menu-label"><span class="menu-toggle-title">REGIONS</span> ☰</label>
+
+            <ul class="nav-links">
+                <li><a href="all-champions.html">ALL CHAMPIONS</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bandlecity.html">Bandle City</a></li>
+                <li><a href="bilgewater.html">Bilgewater</a></li>
+                <li><a href="demacia.html">Demacia</a></li>
+                <li><a href="freljord.html">Freljord</a></li>
+                <li><a href="ionia.html">Ionia</a></li>
+                <li><a href="ixtal.html">Ixtal</a></li>
+                <li><a href="noxus.html">Noxus</a></li>
+                <li><a href="piltover.html">Piltover</a></li>
+                <li><a href="runeterra.html">Runeterra</a></li>
+                <li><a href="shadowisles.html">Shadow Isles</a></li>
+                <li><a href="shurima.html">Shurima</a></li>
+                <li><a href="targon.html">Targon</a></li>
+                <li><a href="void.html">The Void</a></li>
+                <li><a href="zaun.html">Zaun</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="lore-page">
+        <h1>Runeterra Explorer</h1>
+       
+
+        <section class="map-section">
+            <h2>Interaktivt kort over Runeterra</h2>
+            <p>Klik på en region for at læse deres lore.</p>
+
+            <div class="map-wrapper">
+                <img src="img/runeterra-map.jpg" id="world-map" alt="Runeterra Map">
+
+                <div class="hotspot" data-region="demacia" style="top: 33%; left: 24%;"></div>
+                <div class="hotspot" data-region="noxus" style="top: 24%; left: 46.5%;"></div>
+                <div class="hotspot" data-region="freljord" style="top: 13%; left: 28%;"></div>
+                <div class="hotspot" data-region="ionia" style="top: 18%; left: 74.5%;"></div>
+                <div class="hotspot" data-region="piltover" style="top: 46%; left: 56.5%;"></div>
+                <div class="hotspot" data-region="zaun" style="top: 53%; left: 56.5%;"></div>
+                <div class="hotspot" data-region="shurima" style="top: 73%; left: 50%;"></div>
+                <div class="hotspot" data-region="targon" style="top: 75%; left: 34%;"></div>
+                <div class="hotspot" data-region="bilgewater" style="top: 56.5%; left: 76%;"></div>
+                <div class="hotspot" data-region="shadow-isles" style="top: 76%; left: 83%;"></div>
+            </div>
+        </section>
+
+        <div id="region-lightbox" class="modal hidden">
+            <div class="modal-content">
+                <div>
+                    <span id="close-modal">&times;</span>
+                    <img id="modal-region-img" src="" alt="Region billede">
+                    <div id="modal-text">
+                        <h2 id="modal-title">Region Navn</h2>
+                        <div id="modal-text-content">Lore tekst her...</div>
+                        
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button id="prev-champ">❮</button>
+                    
+                    <div id="champ-list-container" class="champ-list"></div>
+                    
+                    <button id="next-champ">❯</button>
+                </div>
+            </div>
+            
+    </main>
+
+    <div id="lightbox-modal" class="hidden">
+        <span id="close-modal">&times;</span>
+        <img id="modal-img" src="" alt="Full size">
+    </div>
+
+    <script src="script/explorer.js"></script>
+</body>
+</html>
