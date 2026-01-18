@@ -170,6 +170,11 @@ img
     display: none;
 }
 
+.slideshow img:not(.show)
+{
+    opacity: 0;
+}
+
 .slideshow .show
 {
     opacity: 1;
